@@ -25,7 +25,8 @@ export default function LandingTeamCard({ img, name, position }) {
                         
                         {like ? <button onClick={checkdown}>  <i class="fas fa-heart" style={{color:"red"}}></i></button > : <button  onClick={check}>  <i class="far fa-heart" style={{color:"red"}}></i></button>}
                         
-                        
+                            
+                            
                     </div>
                 </div>
             </div>
