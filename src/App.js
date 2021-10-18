@@ -9,6 +9,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Tailwind CSS Style Sheet
 import 'assets/styles/tailwind.css';
+import QA from 'components/landing/Q_A';
+import Prof from 'components/landing/Prof';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/Q_A" component={QA} />
+            <Route exact path="/Prof" component={Prof}/>
             <Redirect from="*" to="/" />
         </Switch>
     );

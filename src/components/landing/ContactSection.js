@@ -2,28 +2,27 @@ import Title from 'components/landing/Title';
 import ContactCard from 'components/landing/ContactCard';
 import Form from 'components/landing/Form';
 
+//in this section we will have review,doubt session,one on one chat with professor
+
 export default function ContactSection() {
     return (
         <section className="pb-20 relative block bg-gray-100">
             <div className="container max-w-7xl mx-auto px-4 lg:pt-24">
-                <Title heading="Build something">
-                    Put the potentially record low maximum sea ice extent tihs
-                    year down to low ice. According to the National Oceanic and
-                    Atmospheric Administration, Ted, Scambos.
+                <Title heading="Solve your doubts">
+                    To answer your questions and your doubts we have 
+                    created 3 different sections.
                 </Title>
-
+                
                 <div className="flex flex-wrap -mt-12 justify-center">
-                    <ContactCard icon="stars" title="Excelent Services">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                    <ContactCard icon="" title="Reviews" link="../login">{/*link to review page */}
+                        Here you can find reviews of all the listed colleges
                     </ContactCard>
-                    <ContactCard icon="insert_chart" title="Grow Your Market">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                    <ContactCard icon="" title="Q/A Time" link="../Q_A">{/*link to Q/A page page */}
+                        {/*<p onclick={() => window.open("src\components\landing\Q_A.js","Popup")}>Get some answers to few most asked questions</p>*/}
+                        Get some answers to few most asked questions
                     </ContactCard>
-                    <ContactCard icon="launch" title="Launch Time">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                    <ContactCard icon="" title="Contact Professor" link="../Prof">{/*link to Professors details page */}
+                        To get a professional answer you can contact a Professor
                     </ContactCard>
                 </div>
 

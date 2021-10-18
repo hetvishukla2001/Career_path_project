@@ -6,35 +6,38 @@ import Image3 from 'assets/img/team-3-800x800.jpg';
 import Image4 from 'assets/img/team-4-470x470.png';
 import { Link } from 'react-router-dom';
 import './TopCourses.css';
-
 export default function TeamSection() {
     return (
         <section className="pt-20 pb-48">
-            <div className="container max-w-7xl mx-auto px-4">
-                <Title heading="Here are our heroes">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+            <div className="container max-w-7xl mx-auto px-4" style={{paddingBottom:"90px"}}>
+                <Title heading="Here are top 5 rated colleges in Gujarat">
+                    According to google, we have selected the top 5 colleges
+                    in colleges for last 5 years.
                 </Title>
                 <div className="flex flex-wrap">
-                    <TeamCard
+                    <TeamCard 
                         img={Image1}
-                        name="Ryan Tompson"
+                        name="College 1"
                         position="Web Developer"
                     />
                     <TeamCard
                         img={Image2}
-                        name="Romina Hadid"
+                        name="College 2"
                         position="Marketing Specialist"
                     />
                     <TeamCard
                         img={Image3}
-                        name="Alexa Smith"
+                        name="College 3"
                         position="UI/UX Designer"
                     />
                     <TeamCard
                         img={Image4}
-                        name="Jenna Kardi"
+                        name="College 4"
+                        position="Founder and CEO"
+                    />
+                    <TeamCard
+                        img={Image4}
+                        name="College 5"
                         position="Founder and CEO"
                     />
                 </div>
@@ -114,7 +117,7 @@ export default function TeamSection() {
                     </ul>
                 </div>
             </div>
-            
+
         </section>
     );
 }
