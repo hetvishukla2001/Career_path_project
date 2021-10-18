@@ -527,10 +527,6 @@ video {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
-.my-1{
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
-}
 .-mt-4{
 	margin-top: -1rem;
 }
@@ -605,6 +601,12 @@ video {
 }
 .mt-0{
 	margin-top: 0px;
+}
+.mt-9{
+	margin-top: 2.25rem;
+}
+.mb-1{
+	margin-bottom: 0.25rem;
 }
 .block{
 	display: block;
@@ -724,11 +726,11 @@ video {
 .rounded-full{
 	border-radius: 9999px;
 }
-.rounded{
-	border-radius: 0.25rem;
-}
 .rounded-2xl{
 	border-radius: 1rem;
+}
+.rounded{
+	border-radius: 0.25rem;
 }
 .border-t{
 	border-top-width: 1px;
