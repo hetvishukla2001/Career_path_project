@@ -620,6 +620,9 @@ video {
 .inline-flex{
 	display: inline-flex;
 }
+.table{
+	display: table;
+}
 .grid{
 	display: grid;
 }
@@ -2507,9 +2510,6 @@ video {
 	.md\:w-4\/12{
 		width: 33.333333%;
 	}
-	.md\:w-6\/12{
-		width: 50%;
-	}
 	.md\:w-5\/12{
 		width: 41.666667%;
 	}
@@ -2529,9 +2529,6 @@ video {
 	}
 	.lg\:order-1{
 		order: 1;
-	}
-	.lg\:mb-0{
-		margin-bottom: 0px;
 	}
 	.lg\:mt-0{
 		margin-top: 0px;

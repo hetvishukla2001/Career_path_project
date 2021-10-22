@@ -1,8 +1,10 @@
 import React from 'react';
 // import './CollegenameApi';
 // import './CourseName';
-import './CollegeBar.css';
-import usa from './usa.png';
+import './CollegePage.css';
+
+import data from '../../school.jsx';
+
 const CollegePage = () => { 
     // name, coursename, fees, eligibility
     return (
@@ -47,17 +49,17 @@ const CollegePage = () => {
                 </thead>
                 <tbody className="table1">
                     <tr className="table1">
-                        <td>c1</td>
+                        <td>{data[0].course1.name}</td>
+                        <td>{data[0].course1.fees}</td>
+                        <td>{data[0].course1.eli}</td>
+                    </tr>
+                    <tr className="table1">
+                        <td>{data[0].course2.name}</td>
                         <td>f1</td>
                         <td>e1</td>
                     </tr>
                     <tr className="table1">
-                        <td>c1</td>
-                        <td>f1</td>
-                        <td>e1</td>
-                    </tr>
-                    <tr className="table1">
-                        <td>c1</td>
+                        <td>{data[0].course3.name}</td>
                         <td>f1</td>
                         <td>e1</td>
                     </tr>
@@ -69,28 +71,28 @@ const CollegePage = () => {
         <h2 style={{textAlign:"left",paddingLeft:"10em"}} id="gallery">Gallery</h2>
         <div className="div1 row container-fluid">
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
             <div className="div2 col-3">
-                <img src={usa} style={{width:"200px",height:"200px"}}/>
+                {/* <img src={usa} style={{width:"200px",height:"200px"}}/> */}
             </div>
         </div>
 
