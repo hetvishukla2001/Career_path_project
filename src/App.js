@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Landing from 'pages/Landing';
 import Profile from 'pages/Profile';
 import Login from 'pages/Login';
+import College from 'pages/College';
 import Register from 'pages/Register';
 
 // Font Awesome Style Sheet
@@ -11,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'assets/styles/tailwind.css';
 import QA from 'components/landing/Q_A';
 import Prof from 'components/landing/Prof';
-import CollegePage from 'components/landing/CollegePage';
+//import CollegePage from 'components/landing/CollegePage';
 
 function App() {
     return (
@@ -22,7 +23,7 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/Q_A" component={QA} />
             <Route exact path="/Prof" component={Prof}/>
-            <Route exact path="/college" component={CollegePage}/>
+            <Route exact path="/College" component={College}/>
             
             <Redirect from="*" to="/" />
         </Switch>

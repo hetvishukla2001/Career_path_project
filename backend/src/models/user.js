@@ -1,4 +1,6 @@
 const mongooses= require("mongoose");
+const bcrypt=require("bcryptjs");
+const jwt=require("jsonwebtoken");
 const userschema= new mongooses.Schema({
     username:{
         type:String,
@@ -29,6 +31,16 @@ const userschema= new mongooses.Schema({
     },
     university:String,
     student:Boolean,
+    tokens :[
+        {
+            token:{
+                type:String,
+                require:true,
+       
+
+            }
+        }
+    ],  
     date:{
         type:Date,
         default:Date.now,
@@ -36,6 +48,36 @@ const userschema= new mongooses.Schema({
 
     }
 })
+
+
+
+//hashing 
+userschema.pre("save", async function (next){
+ 
+   if( this.isModified("password")){
+    console.log("hiiiii....")
+       this.password =await  bcrypt.hash(this.password,12);
+       this.cpassword =await bcrypt.hash(this.cpassword,12);
+       console.log(this.password)
+
+   }
+   next();
+
+})
+
+// token 
+userschema.methods.generateAuthToken = async function(){
+    try {
+        let token = jwt.sign({_id:this._id},process.env.SECRET_KEY);
+        this.tokens = this.tokens.concat({token:token});
+        await this.save();
+        return token;
+
+    }
+    catch (err){
+        console.log(err);
+    }
+}
 
 const User=mongooses.model('USER',userschema)
 module.exports =  User;

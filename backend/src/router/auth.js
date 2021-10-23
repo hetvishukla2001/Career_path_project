@@ -1,14 +1,16 @@
 const express=require("express");
+
 const { model } = require("mongoose");
 const router = express.Router();
+const bcrypt=require("bcryptjs")
 const User=require('../models/user');
 router.get("/",(req,res) => {
     res.send("home")
 
 })
 router.post("/register", async (req,res) => {
-    const {username,name,phone,password,cpassword,email,university,student}= req.body
-    if( !username || !name ||  !phone || !password || !cpassword || !email || !university || !student ){
+    const {username,phone,password,cpassword,email,university,student}= req.body
+    if( !username ||   !phone || !password || !cpassword || !email || !university || !student ){
         return res.status(422).json({err:"please fill all the filed"})
     }
     try {
@@ -18,12 +20,19 @@ router.post("/register", async (req,res) => {
     if(useredit){
         return res.json({error : " email already exits"})
     }
-    const users=new User({username,name,phone,password,cpassword,email,university,student})
-    const register=await users.save();
-    if(register){
-        return res.status(201).json({message : "user register "})
+    else if(password != cpassword){
+        return res.json({error : "password not match"})
 
     }
+    else {
+    const users=new User({username,phone,password,cpassword,email,university,student})
+     const userregister=await users.save();
+     console.log(userregister);
+    
+        return res.status(201).json({message : "user register "})
+    }
+
+    
     
 }
 catch(err){
@@ -31,6 +40,42 @@ catch(err){
 
 }
   
+
+})
+router.post("/signin",async (req,res)=>{
+    
+    try {
+        let token;
+        const {email,password}=req.body;
+        if(!email || !password){
+            return res.status(400).json({error : "please fill the filed"})
+        }
+        const useremail= await User.findOne({email:email})
+        
+       
+        if(!useremail){
+            return res.status(400).json({error : " email is not exits"})
+        }
+        const ismatch= await bcrypt.compare(password,useremail.password)
+        if(!ismatch){
+            return res.status(400).json({error : "password is incorrect"})
+
+        }
+        else {
+             token= await useremail.generateAuthToken();
+             res.cookie("jwt",token,{
+                 expires:new Date(Date.now()+23654102000),
+                 httpOnly:true
+             })
+            res.json({message:"sign in successfully"})
+        }
+
+    }
+    catch(err){
+        console.log(err);
+
+    }
+
 
 })
 

@@ -515,6 +515,9 @@ video {
 .z-20{
 	z-index: 20;
 }
+.m-5{
+	margin: 1.25rem;
+}
 .mx-auto{
 	margin-left: auto;
 	margin-right: auto;
@@ -734,6 +737,9 @@ video {
 }
 .rounded{
 	border-radius: 0.25rem;
+}
+.border{
+	border-width: 1px;
 }
 .border-t{
 	border-top-width: 1px;

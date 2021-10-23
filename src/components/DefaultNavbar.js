@@ -93,6 +93,11 @@ export default function DefaultNavbar() {
                                             Register
                                         </DropdownItem>
                                     </Link>
+                                    <Link to="/College">
+                                        <DropdownItem color="lightBlue">
+                                            College
+                                        </DropdownItem>
+                                    </Link>
                                 </Dropdown>
                             </div>
                             <NavLink
