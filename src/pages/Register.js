@@ -13,11 +13,16 @@ import SimpleFooter from 'components/SimpleFooter';
 import Page from 'components/login/Page';
 import Container from 'components/login/Container';
 import {useState} from 'react'
+import { useHistory} from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Register() {
+    const history = useHistory();
+   
     const [user,setUser]=useState({
-        name:"",email:"",password:"",cpassword:"",phone:"",university:"",student:""
+        name:"",email:"",password:"",cpassword:"",phone:"",university:"",student:true
     })
     let name,value;
     const handleInput =(e) =>{
@@ -29,6 +34,51 @@ export default function Register() {
 
 
     }
+    const PostData = async (e) =>{
+       
+        try{
+            e.preventDefault(); 
+            const {name,phone,password,cpassword,email,university,student}= user
+            const res=  await fetch("/registers",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                    username:name,phone,password,cpassword,email,university,student
+                })
+            })
+            const data = await res.json();
+            
+            if(data.err == "please fill all the filed" ){
+                toast.error("please fill all the filed");
+               
+
+            }
+            else if(data.error == " email already exits" ){
+                toast.error("email already exist");
+               
+                history.push("/login")
+
+            }
+            else if(data.error == "password not match"){
+                toast.error("password should be match");
+               
+                
+            }
+            else{
+                toast.success("register successfully");
+               
+                history.push("/login")
+            }
+            
+
+        }
+        catch(err){
+            console.log(err);
+        }
+
+    }
     return (
         <Page >
             <DefaultNavbar />
@@ -36,7 +86,7 @@ export default function Register() {
             <Container >
             <div style={{marginTop:"25rem"}}>
                 <Card>
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form  method='POST' id="registeration" name="register">
                     <CardHeader color="lightBlue">
                         <H5 color="white" style={{ marginBottom: 0 }}>
                             Register
@@ -114,18 +164,24 @@ export default function Register() {
                         </div>
                         <div className="mb-4 px-4">
                         <Label color="">Are you A student?</Label>
+                        <div style={{display:"flex"}}>
+                        <Label color="">yes</Label>
                         <Radio
                             color="pink"
-                            text="Option 1"
+                           value="true"
                             id="option-1"
-                            name="option"
+                            name="student"
                         />
+                        </div>
+                        <div style={{display:"flex"}}>
+                        <Label color="">No</Label>
                         <Radio
                             color="pink"
-                            text="Option 2"
+                           value="false"
                             id="option-2"
-                            name="option"
+                            name="student"
                         />
+                        </div>
                         </div>
                         
                     </CardBody>
@@ -136,12 +192,15 @@ export default function Register() {
                                 buttonType="link"
                                 size="lg"
                                 ripple="dark"
+                                onClick={PostData}
                             >
                                 Register
                             </Button>
+                           
                         </div>
                     </CardFooter>
                     </form>
+                  
                 </Card>
                 </div>
             </Container>

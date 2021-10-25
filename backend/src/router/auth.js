@@ -8,20 +8,21 @@ router.get("/",(req,res) => {
     res.send("home")
 
 })
-router.post("/register", async (req,res) => {
-    const {username,phone,password,cpassword,email,university,student}= req.body
-    if( !username ||   !phone || !password || !cpassword || !email || !university || !student ){
-        return res.status(422).json({err:"please fill all the filed"})
-    }
+router.post("/registers", async (req,res) => {
+   
     try {
+        const {username,phone,password,cpassword,email,university,student}= req.body
+        if( !username ||   !phone || !password || !cpassword || !email || !university || !student ){
+            return res.status(422).json({err:"please fill all the filed"})
+        }
     const useredit=await User.findOne({
         email:email
     });
     if(useredit){
-        return res.json({error : " email already exits"})
+        return res.status(422).json({error : " email already exits"})
     }
     else if(password != cpassword){
-        return res.json({error : "password not match"})
+        return res.status(422).json({error : "password not match"})
 
     }
     else {
@@ -36,6 +37,7 @@ router.post("/register", async (req,res) => {
     
 }
 catch(err){
+   
     console.log(err)
 
 }

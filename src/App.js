@@ -12,10 +12,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'assets/styles/tailwind.css';
 import QA from 'components/landing/Q_A';
 import Prof from 'components/landing/Prof';
+import { ToastContainer } from 'react-toastify';
 //import CollegePage from 'components/landing/CollegePage';
 
 function App() {
     return (
+        <>
         <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/profile" component={Profile} />
@@ -26,7 +28,10 @@ function App() {
             <Route exact path="/College" component={College}/>
             
             <Redirect from="*" to="/" />
+          
         </Switch>
+        <ToastContainer/>
+        </>
     );
 }
 
