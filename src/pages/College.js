@@ -18,22 +18,39 @@ export default function College() {
                
                 <Header />
               
-                <Container>
-                <Row>
-                    <Col><Cards /></Col>
+                <div className=" px-4 mx-auto flex justify-between p-12 ">
+               
+                    <Cards />
+                    <Cards />
+                    <Cards />
+                    <Cards />
                 
-                    <Col><Cards /></Col>
-                    <Col><Cards /></Col>
-                    <Col><Cards /></Col>
-                </Row>
-                <Row className='m-5'>
-                    <Col><Cards /></Col>
+                </div>
+                <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
+               
+                    <Cards />
+                    <Cards />
+                    <Cards />
+                    <Cards />
                 
-                    <Col><Cards /></Col>
-                    <Col><Cards /></Col>
-                    <Col><Cards /></Col>
-                </Row>
-                </Container>
+                </div>
+                <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
+               
+               <Cards />
+               <Cards />
+               <Cards />
+               <Cards />
+           
+           </div>
+           <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
+               
+               <Cards />
+               <Cards />
+               <Cards />
+               <Cards />
+           
+           </div>
+                
                 
              
               
