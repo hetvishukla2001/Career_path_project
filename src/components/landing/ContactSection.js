@@ -14,7 +14,7 @@ export default function ContactSection() {
                 </Title>
                 
                 <div className="flex flex-wrap -mt-12 justify-center">
-                    <ContactCard icon="" title="Reviews" link="../login">{/*link to review page */}
+                    <ContactCard icon="" title="Reviews" link="../Usa">{/*link to review page */}
                         Here you can find reviews of all the listed colleges
                     </ContactCard>
                     <ContactCard icon="" title="Q/A Time" link="../Q_A">{/*link to Q/A page page */}

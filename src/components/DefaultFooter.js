@@ -1,6 +1,7 @@
 import H5 from '@material-tailwind/react/Heading5';
 import LeadText from '@material-tailwind/react/LeadText';
 import Icon from '@material-tailwind/react/Icon';
+import { Link } from 'react-router-dom';
 
 export default function DefaultFooter() {
     return (
@@ -93,93 +94,27 @@ export default function DefaultFooter() {
                                     </span>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a
-                                                href="https://www.creative-tim.com/presentation?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                About Us
-                                            </a>
+                                        <Link to="./Landing" className="text-gray-700 hover:text-gray-900 block pb-2 text-sm">
+                                                Landing
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                                target="_blank"
-                                                href=" https://www.creative-tim.com/blog?ref=mtk"
-                                            >
-                                                Blog
-                                            </a>
+                                        <Link to="./Profile" className="text-gray-700 hover:text-gray-900 block pb-2 text-sm">
+                                                Profile
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a
-                                                href="https://www.github.com/creativetimofficial?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                Github
-                                            </a>
+                                        <Link to="./Login" className="text-gray-700 hover:text-gray-900 block pb-2 text-sm">
+                                                Login
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a
-                                                href=" https://www.creative-tim.com/templates/free?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                Free Products
-                                            </a>
+                                            <Link to="./Register" className="text-gray-700 hover:text-gray-900 block pb-2 text-sm">
+                                                Register
+                                            </Link>
                                         </li>
                                     </ul>
-                                </div>
-                                <div className="w-full lg:w-4/12 px-4">
-                                    <span className="block uppercase text-gray-900 text-sm font-serif font-medium mb-2">
-                                        Other Resources
-                                    </span>
-                                    <ul className="list-unstyled">
-                                        <li>
-                                            <a
-                                                href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                MIT License
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                Contribute
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="https://github.com/creativetimofficial/material-tailwind/blob/main/CODE_OF_CONDUCT.md?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                Code of Conduct
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                href="https://creative-tim.com/contact-us?ref=mtk"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-700 hover:text-gray-900 block pb-2 text-sm"
-                                            >
-                                                Contact Us
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
@@ -187,8 +122,7 @@ export default function DefaultFooter() {
                     <div className="flex flex-wrap items-center md:justify-between justify-center">
                         <div className="w-full md:w-4/12 px-4 mx-auto text-center">
                             <div className="text-sm text-gray-700 font-medium py-1">
-                                Copyright © {new Date().getFullYear()} Career Path{' '}
-                              
+                                Copyright © {new Date().getFullYear()} Career Path{' '}                              
                                 .
                             </div>
                         </div>

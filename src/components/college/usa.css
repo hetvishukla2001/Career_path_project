@@ -1,0 +1,23 @@
+#table1 {
+    border-collapse: collapse;
+    margin-left: 21%;
+    font-size: large;
+}
+
+#table1 th {
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 25px;
+}
+
+#table1 td {
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+}
+
+#table1 tr:hover {
+    background-color: #ddd;
+}

@@ -14,6 +14,8 @@ import QA from 'components/landing/Q_A';
 import Prof from 'components/landing/Prof';
 import { ToastContainer } from 'react-toastify';
 import LatestNews from 'components/landing/LatestNews';
+import Usa from 'components/college/Usa';
+import ReadMore from 'components/landing/ReadMore';
 //import CollegePage from 'components/landing/CollegePage';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
             <Route exact path="/Prof" component={Prof}/>
             <Route exact path="/College" component={College}/>
             <Route exact path="/LatestNews" component={LatestNews} />
+            <Route exact path="/Usa" component={Usa} />
+            <Route exact path="./ReadMore" component={ReadMore} />
             
             <Redirect from="*" to="/" />
           

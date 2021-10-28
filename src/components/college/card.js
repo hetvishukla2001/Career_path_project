@@ -11,7 +11,7 @@ export default function Cards() {
     return (
         
          
-         <Card >
+         <Card>
              <CardImage src="https://images.unsplash.com/photo-1562774053-701939374585?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
                 alt="Card Image" />
              <CardBody>
