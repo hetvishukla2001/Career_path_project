@@ -2,7 +2,8 @@ const express=require("express");
 
 const { model } = require("mongoose");
 const router = express.Router();
-const bcrypt=require("bcryptjs")
+const bcrypt=require("bcryptjs");
+const authenti = require("../middleware/authenti")
 const User=require('../models/user');
 router.get("/",(req,res) => {
     res.send("home")
@@ -13,7 +14,7 @@ router.post("/registers", async (req,res) => {
     try {
         const {username,phone,password,cpassword,email,university,student}= req.body
         if( !username ||   !phone || !password || !cpassword || !email || !university || !student ){
-            return res.status(422).json({err:"please fill all the filed"})
+            return res.status(422).json({err:"please fill all the fields"})
         }
     const useredit=await User.findOne({
         email:email
@@ -28,7 +29,7 @@ router.post("/registers", async (req,res) => {
     else {
     const users=new User({username,phone,password,cpassword,email,university,student})
      const userregister=await users.save();
-     console.log(userregister);
+     
     
         return res.status(201).json({message : "user register "})
     }
@@ -79,6 +80,10 @@ router.post("/signin",async (req,res)=>{
     }
 
 
+})
+router.get("/profiles",authenti,(req,res) => {
+    console.log("hello")
+    res.send("here profile")
 })
 
 /*

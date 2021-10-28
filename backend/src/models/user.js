@@ -55,10 +55,11 @@ const userschema= new mongooses.Schema({
 userschema.pre("save", async function (next){
  
    if( this.isModified("password")){
-    console.log("hiiiii....")
+      
+    
        this.password =await  bcrypt.hash(this.password,12);
        this.cpassword =await bcrypt.hash(this.cpassword,12);
-       console.log(this.password)
+       
 
    }
    next();

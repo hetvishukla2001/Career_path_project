@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/College" component={College}/>
             <Route exact path="/LatestNews" component={LatestNews} />
             <Route exact path="/Usa" component={Usa} />
-            <Route exact path="./ReadMore" component={ReadMore} />
+            <Route exact path="/ReadMore" component={ReadMore} />
             
             <Redirect from="*" to="/" />
           

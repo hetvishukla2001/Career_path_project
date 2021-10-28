@@ -26,7 +26,7 @@ export default function Register() {
     })
     let name,value;
     const handleInput =(e) =>{
-        console.log(e)
+        
         name=e.target.name;
         value=e.target.value;
         setUser({...user,[name]:value})
@@ -38,7 +38,7 @@ export default function Register() {
        
         try{
             e.preventDefault(); 
-            const {name,phone,password,cpassword,email,university,student}= user
+            const {name,phone,password,cpassword,email,university,student}= user.name
             const res=  await fetch("/registers",{
                 method:"POST",
                 headers:{
