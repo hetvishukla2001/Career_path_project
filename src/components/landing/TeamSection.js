@@ -5,6 +5,7 @@ import Image2 from 'assets/img/team-2-800x800.jpg';
 import Image3 from 'assets/img/team-3-800x800.jpg';
 import Image4 from 'assets/img/team-4-470x470.png';
 import { Link } from 'react-router-dom';
+import usa from './usa.png';
 import './TopCourses.css';
 export default function TeamSection() {
     return (
@@ -16,29 +17,29 @@ export default function TeamSection() {
                 </Title>
                 <div className="flex flex-wrap">
                     <TeamCard 
-                        img={Image1}
+                        img={usa}
                         name="College 1"
-                        position="Web Developer"
+                        position=""
                     />
                     <TeamCard
-                        img={Image2}
+                        img={usa}
                         name="College 2"
-                        position="Marketing Specialist"
+                        position=""
                     />
                     <TeamCard
-                        img={Image3}
+                        img={usa}
                         name="College 3"
-                        position="UI/UX Designer"
+                        position=""
                     />
                     <TeamCard
-                        img={Image4}
+                        img={usa}
                         name="College 4"
-                        position="Founder and CEO"
+                        position=""
                     />
                     <TeamCard
-                        img={Image4}
+                        img={usa}
                         name="College 5"
-                        position="Founder and CEO"
+                        position=""
                     />
                 </div>
             </div>

@@ -4,15 +4,15 @@ import React, { useState } from "react";
 import { questions } from './api_QA';
 import './qa.css';
 import MyQA from './MyQA';
-import DefaultNavbar from 'components/DefaultNavbar';
 import DefaultFooter from 'components/DefaultFooter';
+import Navbar1 from '../../navbar/Navbar';
 
 const QA = () => {
     const [data, setData] = useState(questions);
     return(
         <>
             <div className="absolute w-full z-20" >
-                <DefaultNavbar />
+                <Navbar1 />
             </div>
             <div className="body">
                 <section className="main_div">
