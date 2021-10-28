@@ -5,6 +5,8 @@ const router = express.Router();
 const bcrypt=require("bcryptjs");
 const authenti = require("../middleware/authenti")
 const User=require('../models/user');
+const cookieParser =require("cookie-parser");
+router.use(cookieParser())
 router.get("/",(req,res) => {
     res.send("home")
 
@@ -66,7 +68,7 @@ router.post("/signin",async (req,res)=>{
         }
         else {
              token= await useremail.generateAuthToken();
-             res.cookie("jwt",token,{
+             res.cookie("jwttoken",token,{
                  expires:new Date(Date.now()+23654102000),
                  httpOnly:true
              })
@@ -82,8 +84,8 @@ router.post("/signin",async (req,res)=>{
 
 })
 router.get("/profiles",authenti,(req,res) => {
-    console.log("hello")
-    res.send("here profile")
+    console.log("hello");
+    res.send(req.rootToken);
 })
 
 /*

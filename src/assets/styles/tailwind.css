@@ -917,10 +917,6 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(99, 102, 241, var(--tw-text-opacity));
 }
-.text-pink-400{
-	--tw-text-opacity: 1;
-	color: rgba(244, 114, 182, var(--tw-text-opacity));
-}
 .text-red-600{
 	--tw-text-opacity: 1;
 	color: rgba(220, 38, 38, var(--tw-text-opacity));
