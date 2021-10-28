@@ -8,33 +8,34 @@ import LeadText from '@material-tailwind/react/LeadText';
 import Paragraph from '@material-tailwind/react/Paragraph';
 import StatusCard from 'components/landing/StatusCard';
 import Teamwork from 'assets/img/teamwork.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function WorkingSection() {
     return (
         <section className="pb-20 bg-gray-100 -mt-32">
             <div className="container max-w-7xl mx-auto px-4">
                 <div className="flex flex-wrap relative z-50">
-                    <StatusCard color="red" icon="stars" title="Awarded Agency">
-                        Divide details about your product or agency work into
-                        parts. A paragraph describing a feature will be enough.
+                    <StatusCard color="red" icon="school" title="Find College" link="./College">
+                        Find and learn about all the colleges in Gujarat.
                     </StatusCard>
                     <StatusCard
                         color="lightBlue"
-                        icon="autorenew"
-                        title="Free Revisions"
+                        icon="library_books"
+                        title="Explore Exams"
+                        link=""
                     >
-                        Keep you user engaged by providing meaningful
-                        information. Remember that by this time, the user is
-                        curious.
+                        Find and learn all the exams to get admission in the department
+                        of the college of your choice.
                     </StatusCard>
                     <StatusCard
                         color="teal"
-                        icon="fingerprint"
-                        title="Verified Company"
+                        icon="article"
+                        title="Latest News"
+                        link="./LatestNews"
                     >
-                        Write a few lines about each one. A paragraph describing
-                        a feature will be enough. Keep you user engaged!
+                        Stay informed about the latest news for your higher studies.
                     </StatusCard>
+                    
                 </div>
 
                 <div className="flex flex-wrap items-center mt-32">
@@ -54,12 +55,7 @@ export default function WorkingSection() {
                             images and you're good to go. Just make sure you
                             enable them first via JavaScript.
                         </LeadText>
-                        <a
-                            href="#pablo"
-                            className="font-medium text-light-blue-500 mt-2 inline-block"
-                        >
-                            Read More
-                        </a>
+                        <Link to="/ReadMore">Read more</Link>
                     </div>
 
                     <div className="w-full md:w-4/12 px-4 mx-auto flex justify-center mt-24 lg:mt-0">

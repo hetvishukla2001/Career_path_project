@@ -3,6 +3,7 @@ import CardBody from '@material-tailwind/react/CardBody';
 import Icon from '@material-tailwind/react/Icon';
 import H6 from '@material-tailwind/react/Heading6';
 import Paragraph from '@material-tailwind/react/Paragraph';
+import { Link } from 'react-router-dom';
 
 const colors = {
     blueGray: 'bg-blue-gray-500',
@@ -26,7 +27,7 @@ const colors = {
     red: 'bg-red-500',
 };
 
-export default function StatusCard({ color, icon, title, children }) {
+export default function StatusCard({ color, icon, title, children, link }) {
     return (
         <div className="w-full md:w-4/12 px-4 flex justify-center text-center">
             <Card>
@@ -36,7 +37,7 @@ export default function StatusCard({ color, icon, title, children }) {
                     >
                         <Icon name={icon} size="xl" color="white" />
                     </div>
-                    <H6 color="gray">{title}</H6>
+                    <Link to={`${link}`}><H6 color="gray">{title}</H6></Link>
                     <Paragraph color="blueGray">{children}</Paragraph>
                 </CardBody>
             </Card>

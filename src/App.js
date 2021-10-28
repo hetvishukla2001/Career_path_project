@@ -13,6 +13,7 @@ import 'assets/styles/tailwind.css';
 import QA from 'components/landing/Q_A';
 import Prof from 'components/landing/Prof';
 import { ToastContainer } from 'react-toastify';
+import LatestNews from 'components/landing/LatestNews';
 //import CollegePage from 'components/landing/CollegePage';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/Q_A" component={QA} />
             <Route exact path="/Prof" component={Prof}/>
             <Route exact path="/College" component={College}/>
+            <Route exact path="/LatestNews" component={LatestNews} />
             
             <Redirect from="*" to="/" />
           
