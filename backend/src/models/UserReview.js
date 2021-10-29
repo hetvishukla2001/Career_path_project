@@ -1,12 +1,12 @@
 const mongooses= require("mongoose");
 
-const userschema= new mongooses.Schema({
+const userschemareview= new mongooses.Schema({
     username:{
         type:String,
         require:true
     },
 
-    name:{
+    email:{
         type:String,
         require:true,
     },
@@ -28,9 +28,9 @@ const userschema= new mongooses.Schema({
     ] 
     
 })
-userschema.methods.addMessage = async function(message){
+userschemareview.methods.addMessage = async function(message){
     try {
-        this.messages=this.messages.concate({message})
+        this.messages=this.messages.concat({message})
         await this.save();
         return this.messages
     
@@ -44,5 +44,5 @@ userschema.methods.addMessage = async function(message){
 
 
 
-const UserReview=mongooses.model('USERREVIEW',userschema)
+const UserReview=mongooses.model('USERREVIEW',userschemareview)
 module.exports =  UserReview;
