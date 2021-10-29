@@ -10,6 +10,11 @@ export default function Form() {
     const [deatils,newdetails]=useState({
         
     });
+    const [user,setUser]=useState({
+        username: deatils.username ,
+        email: deatils.email,
+        message:""
+    });
     const callProfile=async ()=>{
         try{
             const res= await fetch("/getdata",
@@ -22,6 +27,12 @@ export default function Form() {
             })
             const data = await res.json();
            newdetails(data);
+           setUser({
+            username: data.username ,
+            email: data.email,
+            message:""
+           }
+           )
             if(!res.status === 200){
                 const error = new Error(res.error);
                 throw error ;
@@ -39,16 +50,13 @@ export default function Form() {
     useEffect(()=>{
         callProfile();
     },[])
-    const [user,setUser]=useState({
-        username:"",
-        email:"",
-        message:""
-    });
+   
     let name,value;
     const handleInput =(e) =>{
         
         name=e.target.name;
         value=e.target.value;
+        newdetails({...user,[name]:value})
         setUser({...user,[name]:value})
         
 
@@ -108,8 +116,9 @@ export default function Form() {
                          <form method="POST">
                              <div className="flex gap-8 mt-16 mb-12">
                                  <Input
+                                    value={deatils.username}
                                      type="text"
-                                     value={deatils.username}
+                                     
                                      name="username"
                                      onChange={handleInput}
                                      placeholder="Full Name"

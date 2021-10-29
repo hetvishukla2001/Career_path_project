@@ -99,18 +99,19 @@ router.post("/message", async (req,res) => {
         if( !username || !email || !message ){
             return res.status(422).json({err:"please fill all the fields"})
         }
-    const useredit=await Userreview.findOne({
+    const useredit=await UserReview.findOne({
         email:email
     });
     if(useredit){
         const usermessage = await useredit.addMessage(message)
         await useredit.save();
-        return res.status(201).json({message : "user register "})
+        return res.status(201).json({message : "user register again"})
         
     }
     
     else {
-        const users=new Userreview({username,email,messages:{message}})
+        const users=new UserReview({username,email,messages:[{message:message}]})
+       
         const userregister=await users.save();
      
     
