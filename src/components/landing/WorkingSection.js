@@ -9,6 +9,7 @@ import Paragraph from '@material-tailwind/react/Paragraph';
 import StatusCard from 'components/landing/StatusCard';
 import Teamwork from 'assets/img/teamwork.jpeg';
 import { Link } from 'react-router-dom';
+import pic from '../../assets/img/five-ways-to-build-a-rewarding-career.jpg';
 
 export default function WorkingSection() {
     return (
@@ -55,7 +56,7 @@ export default function WorkingSection() {
 
                     <div className="w-full md:w-4/12 px-4 mx-auto flex justify-center mt-24 lg:mt-0">
                         <Card>
-                            <CardImage alt="Card Image"  />
+                            <CardImage alt="Card Image"  src={pic}/>
                             <CardBody>
                                 <H6 color="gray"></H6>
                                 <Paragraph color="blueGray">
