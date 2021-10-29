@@ -38,7 +38,7 @@ export default function Register() {
        
         try{
             e.preventDefault(); 
-            const {name,phone,password,cpassword,email,university,student}= user.name
+            const {name,phone,password,cpassword,email,university,student}= user
             const res=  await fetch("/registers",{
                 method:"POST",
                 headers:{

@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt=require("bcryptjs");
 const authenti = require("../middleware/authenti")
 const User=require('../models/user');
+const UserReview=require("../models/UserReview");
 const cookieParser =require("cookie-parser");
 router.use(cookieParser())
 router.get("/",(req,res) => {
@@ -87,6 +88,43 @@ router.get("/profiles",authenti,(req,res) => {
     console.log("hello");
     res.send(req.rootToken);
 })
+router.get("/getdata",authenti,(req,res) => {
+    
+    res.send(req.rootToken);
+})
+router.post("/message", async (req,res) => {
+   
+    try {
+        const {username,email,message}= req.body
+        if( !username || !email || !message ){
+            return res.status(422).json({err:"please fill all the fields"})
+        }
+    const useredit=await Userreview.findOne({
+        email:email
+    });
+    if(useredit){
+        const usermessage = await useredit.addMessage(message)
+        await useredit.save();
+        return res.status(201).json({message : "user register "})
+        
+    }
+    
+    else {
+        const users=new Userreview({username,email,messages:{message}})
+        const userregister=await users.save();
+     
+    
+        return res.status(201).json({message : "user register "})
+    }
+
+    
+    
+}
+catch(err){
+   
+    console.log(err)
+
+}});
 
 /*
 router.post("/register",  (req,res) => {

@@ -2,10 +2,11 @@ import DefaultNavbar from 'components/DefaultNavbar';
 import DefaultFooter from 'components/DefaultFooter';
 import Header from 'components/profile/Header';
 import Content from 'components/profile/Content';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 export default function Profile() {
+    const [deatils,newdetails]=useState({});
     const callProfile=async ()=>{
         try{
             const res= await fetch("/profiles",
@@ -18,7 +19,7 @@ export default function Profile() {
                 credentials: "include"
             })
             const data = await res.json();
-            console.log(data)
+           newdetails(data);
             if(!res.status === 200){
                 const error = new Error(res.error);
                 throw error ;
@@ -32,6 +33,7 @@ export default function Profile() {
         }
 
     }
+    
     const history = useHistory();
     useEffect(()=>{
         callProfile();
@@ -46,7 +48,11 @@ export default function Profile() {
                
                 <Header />
                 <form method='GET'>
-                <Content />
+                <Content
+                name={deatils.username}
+                phone={deatils.phone}
+                email={deatils.email}
+                university={deatils.university} />
                 </form>
                 
             </main>
