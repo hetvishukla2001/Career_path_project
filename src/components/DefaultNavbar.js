@@ -59,7 +59,7 @@ export default function DefaultNavbar() {
                                 >
                                     <Link to="/">
                                         <DropdownItem color="lightBlue">
-                                            Landing
+                                            Dashboard
                                         </DropdownItem>
                                     </Link>
                                     <Link to="/profile">

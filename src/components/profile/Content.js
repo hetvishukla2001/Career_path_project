@@ -52,7 +52,7 @@ export default function Content({name,phone,email,university}) {
                         <div className="mb-10 py-2 border-t border-gray-200 text-center">
                             <div className="flex flex-wrap justify-center">
                                 <div className="w-full lg:w-9/12 px-4 flex flex-col items-center">
-                                    <LeadText color="blueGray">
+                                    {/* <LeadText color="blueGray">
                                         An artist of considerable range, Jenna
                                         the name taken by Melbourne-raised,
                                         Brooklyn-based Nick Murphy writes,
@@ -72,7 +72,7 @@ export default function Content({name,phone,email,university}) {
                                         >
                                             Show more
                                         </Button>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </div>

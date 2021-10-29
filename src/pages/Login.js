@@ -67,7 +67,7 @@ export default function Login() {
         <Page>
             <DefaultNavbar />
             <Container>
-            <form  method='POST' id="login" name="login">
+            <form  method='POST' id="login" name="login" style={{border:"none !important"}}>
                 <Card>
                     <CardHeader color="lightBlue">
                         <H5 color="white" style={{ marginBottom: 0 }}>

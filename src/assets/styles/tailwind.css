@@ -723,6 +723,9 @@ video {
 .rounded-2xl{
 	border-radius: 1rem;
 }
+.border{
+	border-width: 1px;
+}
 .border-t{
 	border-top-width: 1px;
 }

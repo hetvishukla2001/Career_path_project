@@ -66,6 +66,10 @@ export default function Register() {
                
                 
             }
+            else if(res.status === 422){
+                toast.error("fill the filed");
+
+            }
             else{
                 toast.success("register successfully");
                
