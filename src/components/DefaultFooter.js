@@ -83,7 +83,7 @@ export default function DefaultFooter() {
                                     <ul className="list-unstyled">
                                         <li>
                                         <Link to="./Landing" className="text-gray-700 hover:text-gray-900 block pb-2 text-sm">
-                                                Landing
+                                                Dashboard
                                             </Link>
                                         </li>
                                         <li>
@@ -101,6 +101,7 @@ export default function DefaultFooter() {
                                                 Register
                                             </Link>
                                         </li>
+                                        
                                     </ul>
                                 </div>                                
                             </div>

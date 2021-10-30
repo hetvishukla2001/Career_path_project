@@ -126,6 +126,11 @@ catch(err){
     console.log(err)
 
 }});
+router.get("/logout",authenti,(req,res) => {
+    console.log("hellow logout")
+    res.clearCookie('jwttoken',{path : '/'})
+    res.status(200).send("logout")
+})
 
 /*
 router.post("/register",  (req,res) => {
