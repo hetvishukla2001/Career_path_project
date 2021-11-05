@@ -14,8 +14,11 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
+import { UserContext } from 'App';
 
 export default function Login() {
+    const {state,dispatch}=useContext(UserContext)
     const history = useHistory();
     const [email, newemail]=useState('');
     const [password,newpassword]=useState('');
@@ -51,6 +54,7 @@ export default function Login() {
             
         }
         else{
+            dispatch({type:"USER",payload:true})
             toast.success("login successfully");
            
             history.push("/")
@@ -67,7 +71,7 @@ export default function Login() {
         <Page>
             <DefaultNavbar />
             <Container>
-            <form  method='POST' id="login" name="login">
+            <form  method='POST' id="login" name="login" style={{border:"none !important"}}>
                 <Card>
                     <CardHeader color="lightBlue">
                         <H5 color="white" style={{ marginBottom: 0 }}>

@@ -50,8 +50,8 @@ export default function Register() {
             })
             const data = await res.json();
             
-            if(data.err == "please fill all the filed" ){
-                toast.error("please fill all the filed");
+            if(data.err == "please fill all the fields" ){
+                toast.error("please fill all the field");
                
 
             }
@@ -65,6 +65,10 @@ export default function Register() {
                 toast.error("password should be match");
                
                 
+            }
+            else if(res.status === 422){
+                toast.error("fill the field");
+
             }
             else{
                 toast.success("register successfully");

@@ -16,27 +16,44 @@ import { ToastContainer } from 'react-toastify';
 import LatestNews from 'components/landing/LatestNews';
 import Usa from 'components/college/Usa';
 import ReadMore from 'components/landing/ReadMore';
+import Logout from 'components/Logout'
+import { createContext } from 'react';
+import { useReducer } from 'react';
+import { initialState,reducer } from 'components/reducer/UserReducer';
 //import CollegePage from 'components/landing/CollegePage';
+export const UserContext = createContext();
+const Routing = () => {
+    return (
+        <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/Q_A" component={QA} />
+        <Route exact path="/Prof" component={Prof}/>
+        <Route exact path="/College" component={College}/>
+        <Route exact path="/LatestNews" component={LatestNews} />
+        <Route exact path="/Usa" component={Usa} />
+        <Route exact path="/ReadMore" component={ReadMore} />
+        <Route exact path="/logout" component={Logout} />
+        
+        <Redirect from="*" to="/" />
+      
+    </Switch>
+    )
+}
+
 
 function App() {
+    const [state,dispatch]=useReducer(reducer,initialState)
+    
     return (
         <>
-        <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/profile" component={Profile} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/Q_A" component={QA} />
-            <Route exact path="/Prof" component={Prof}/>
-            <Route exact path="/College" component={College}/>
-            <Route exact path="/LatestNews" component={LatestNews} />
-            <Route exact path="/Usa" component={Usa} />
-            <Route exact path="/ReadMore" component={ReadMore} />
-            
-            <Redirect from="*" to="/" />
-          
-        </Switch>
-        <ToastContainer/>
+        <UserContext.Provider value={{state,dispatch}}>
+            <Routing />
+            <ToastContainer/>
+        </UserContext.Provider>
+      
         </>
     );
 }

@@ -3,8 +3,7 @@ const User=require('../models/user');
 
 const authenti = async (req,res,next) =>{
     try{
-        console.log("helooo......")
-        console.log(req)
+        
         const token= req.cookies.jwttoken;
         const verify = jwt.verify(token,process.env.SECRET_KEY)
         const root = await User.findOne({_id:verify._id,"tokens.token":token})
