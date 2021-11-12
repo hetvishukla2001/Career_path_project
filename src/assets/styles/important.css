@@ -1,0 +1,10 @@
+.borderdiable {
+    border: none !important;
+
+}
+.forget {
+    color: red;
+    margin-left: 1.5rem;
+    padding: auto;
+    cursor: pointer;
+}

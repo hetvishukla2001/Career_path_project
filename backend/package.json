@@ -19,6 +19,7 @@
     "hbs": "^4.1.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.6",
+    "nodemailer": "^6.7.0",
     "react-toastify": "^8.0.3"
   }
 }

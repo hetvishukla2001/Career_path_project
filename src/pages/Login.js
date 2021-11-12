@@ -4,7 +4,7 @@ import CardBody from '@material-tailwind/react/CardBody';
 import CardFooter from '@material-tailwind/react/CardFooter';
 import H5 from '@material-tailwind/react/Heading5';
 import InputIcon from '@material-tailwind/react/InputIcon';
-import Checkbox from '@material-tailwind/react/Checkbox';
+
 import Button from '@material-tailwind/react/Button';
 import DefaultNavbar from 'components/DefaultNavbar';
 import SimpleFooter from 'components/SimpleFooter';
@@ -16,6 +16,9 @@ import { useHistory } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react';
 import { UserContext } from 'App';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import "../assets/styles/important.css"
+
 
 export default function Login() {
     const {state,dispatch}=useContext(UserContext)
@@ -66,6 +69,10 @@ export default function Login() {
         }
 
     }
+    const changepassword = async()=>{
+        history.push("/reset")
+
+    }
     
     return (
         <Page>
@@ -89,6 +96,7 @@ export default function Login() {
                                 name="email"
                                 placeholder="Email Address"
                                 iconName="email"
+                                
                             />
                         </div>
                         <div className="mb-8 px-4">
@@ -102,13 +110,10 @@ export default function Login() {
                                 iconName="lock"
                             />
                         </div>
-                        <div className="mb-4 px-4">
-                            <Checkbox
-                                color="lightBlue"
-                                text="Remember Me"
-                                id="remember"
-                            />
-                        </div>
+                        
+                            <span className='forget' onClick={changepassword}>forget password?</span>
+                               
+                        
                     </CardBody>
                     <CardFooter>
                         <div className="flex justify-center bg-bb">
