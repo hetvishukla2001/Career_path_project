@@ -16,9 +16,12 @@ import {useState} from 'react'
 import { useHistory} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
+import { UserContext } from 'App';
 
 
 export default function Register() {
+    const {state,dispatch}=useContext(UserContext)
     const history = useHistory();
    
     const [user,setUser]=useState({
@@ -72,8 +75,22 @@ export default function Register() {
             }
             else{
                 toast.success("register successfully");
+                
                
-                history.push("/login")
+                const res = await fetch("/signin",{
+                    method:"POST",
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify({
+                       email,password
+                    })
+                })
+                    dispatch({type:"USER",payload:true})
+                    toast.success("login successfully");
+                   
+                    history.push("/")
+                
             }
             
 

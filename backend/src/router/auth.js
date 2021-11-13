@@ -130,9 +130,11 @@ catch(err){
 }});
 router.get("/logout",authenti,async (req,res) => {
     console.log("hellow logout")
+    res.clearCookie('jwttoken',{path : '/'})
+    res.status(200).send("logout")
    
 })
-router.post("/forgot",authenti,async (req,res) => {
+router.post("/forgot",async (req,res) => {
     try{
     const {email} = req.body;
     let data = await User.findOne({email})
@@ -143,7 +145,7 @@ router.post("/forgot",authenti,async (req,res) => {
             {
                 email:email,
                 code:otpcode,
-                expiredate: new Date().getTime() + 400 *1000
+                expiredate: new Date().getTime() + 300 *1000
             }
         
         )
@@ -157,20 +159,32 @@ router.post("/forgot",authenti,async (req,res) => {
 
     }
 
-    console.log("hellow logout")
+    
 }
 catch(err){
     console.log(err);
 }
     
 })
-router.get("/changePassword",authenti,async (req,res) => {
+router.post("/changePassword",async (req,res) => {
     try{
-    let data=await Otp.find({email:req.body.email,code:req.body.otpcode})
+        const {password,cpassword,email,otpcode}=req.body
+    const data= await Otp.findOne({email,code:otpcode})
+    console.log(data)
+
     if(data){
+
         let current=new Date().getTime();
         let diff=data.expiredate - current;
-        if(diff < 0){
+        if(!email || !otpcode || !password || !cpassword){
+            res.status(400).json({err:"enter all fileds"})
+
+        }
+        else if(password != cpassword){
+            res.status(400).json({err:"password not match"})
+
+        }
+        else if(diff < 0){
             res.status(400).json({err:"time expired try again!!"})
 
         }

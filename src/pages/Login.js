@@ -28,8 +28,7 @@ export default function Login() {
     const loginuser = async (e) =>{
         try {
         e.preventDefault();
-        console.log(email)
-        console.log(password);
+        
         const res = await fetch("/signin",{
             method:"POST",
             headers:{
