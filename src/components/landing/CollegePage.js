@@ -6,17 +6,34 @@ import TabList from "@material-tailwind/react/TabList";
 import TabItem from "@material-tailwind/react/TabItem";
 import TabContent from "@material-tailwind/react/TabContent";
 import TabPane from "@material-tailwind/react/TabPane";
+import { Image } from "@material-tailwind/react";
+import data from '../college/CollegeCardData';
+import DefaultNavbar from 'components/DefaultNavbar';
+import DefaultFooter from 'components/DefaultFooter';
 
 
-import data from '../../school.jsx';
 import { useState } from "react";
 
-const CollegePage = () => { 
+const CollegePage = (props) => { 
+    
+    const {id} = props.location.state
+    let info=data.find(data=> data.id === id)
     const [openTab, setOpenTab] = useState(1);
+    
 
     return (
+        <>
+        <div className="absolute w-full z-20">
+        <DefaultNavbar />
+         </div>
+         <section className="relative block h-[500px]">
+            <div className={`col${id} bg-cover bg-center absolute top-0 w-full h-full`} />
+        </section>
 
         <Tab>
+
+
+
             <TabList color="lightBlue">
                 <TabItem
                     onClick={(e) => {
@@ -27,7 +44,7 @@ const CollegePage = () => {
                     active={openTab === 1 ? true : false}
                     href="tabItem"
                 >
-                    Info
+                    Info {id} {info.fees}
                 </TabItem>
                 <TabItem
                     onClick={(e) => {
@@ -38,7 +55,7 @@ const CollegePage = () => {
                     active={openTab === 2 ? true : false}
                     href="tabItem"
                 >
-                    Course & Fees
+                    Course & Fees {id} {info.fees}
                 </TabItem>
                 <TabItem
                     onClick={(e) => {
@@ -122,19 +139,19 @@ const CollegePage = () => {
                             </thead>
                             <tbody className="table1">
                                 <tr className="table1">
-                                    <td>{data[0].course1.name}</td>
-                                    <td>{data[0].course1.fees}</td>
-                                    <td>{data[0].course1.eli}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr className="table1">
-                                    <td>{data[0].course2.name}</td>
-                                    <td>{data[0].course2.fees}</td>
-                                    <td>{data[0].course2.eli}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr className="table1">
-                                    <td>{data[0].course3.name}</td>
-                                    <td>{data[0].course3.fees}</td>
-                                    <td>{data[0].course3.eli}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -369,6 +386,8 @@ const CollegePage = () => {
                 </TabPane>
             </TabContent>
         </Tab>
+        <DefaultFooter />
+        </>
     );
 }
 

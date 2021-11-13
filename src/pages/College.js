@@ -40,53 +40,7 @@ export default function College() {
           {data.map(collegecard)}
            
           </Row>
-        </Container>
-                
-          
-          
-               
-                 
-                
-                
-              
-
-                {/* <div className=" px-4 mx-auto flex justify-between p-12 ">
-               
-=======
-                <div className=" px-4 mx-auto flex justify-between p-12 ">
-
-                    <Cards />
-                    <Cards />
-                    <Cards />
-                    <Cards />
-                
-                </div>
-                <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
-               
-                    <Cards />
-                    <Cards />
-                    <Cards />
-                    <Cards />
-                
-                </div>
-                <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
-               
-               <Cards />
-               <Cards />
-               <Cards />
-               <Cards />
-           
-           </div>
-           <div className=" px-4 mx-auto flex justify-between pt-12 pb-12 lg:mt-0">
-               
-               <Cards />
-               <Cards />
-               <Cards />
-               <Cards />
-           
-           </div> */}
-                
-               
+        </Container>    
             </main>
             <DefaultFooter />
         </>

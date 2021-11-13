@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
         {/* <CardImage src={src}
            alt="Card Image" /> */}
         <CardBody>
-            <Link to="/info"><H6 color="gray">{name}</H6></Link>
+            <Link to={{ pathname: '/info', state: { id: id} }}><H6 color="gray">{name}</H6></Link>
             <Paragraph color="blueGray">
                {city}
             </Paragraph>

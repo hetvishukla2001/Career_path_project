@@ -39,7 +39,7 @@ const Routing = () => {
         <Route exact path="/ReadMore" component={ReadMore} />
         <Route exact path="/logout" component={Logout} />
         <Route exact path="/reset" component={ResetPassword} />
-        <Route exact path="/info" component={CollegePage} />
+        <Route exact path='/info'  component={CollegePage} />
         
         <Redirect from="*" to="/" />
       
