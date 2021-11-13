@@ -9,7 +9,7 @@ import Register from 'pages/Register';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Tailwind CSS Style Sheet
-import 'assets/styles/tailwind.css';
+import 'assets/styles/career.css';
 import QA from 'components/landing/Q_A';
 import Prof from 'components/landing/Prof';
 import { ToastContainer } from 'react-toastify';
@@ -20,6 +20,7 @@ import Logout from 'components/Logout'
 import { createContext } from 'react';
 import { useReducer } from 'react';
 import { initialState,reducer } from 'components/reducer/UserReducer';
+import ResetPassword  from 'pages/ResetPassword'
 //import CollegePage from 'components/landing/CollegePage';
 export const UserContext = createContext();
 const Routing = () => {
@@ -36,6 +37,7 @@ const Routing = () => {
         <Route exact path="/Usa" component={Usa} />
         <Route exact path="/ReadMore" component={ReadMore} />
         <Route exact path="/logout" component={Logout} />
+        <Route exact path="/reset" component={ResetPassword} />
         
         <Redirect from="*" to="/" />
       

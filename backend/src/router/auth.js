@@ -6,7 +6,9 @@ const bcrypt=require("bcryptjs");
 const authenti = require("../middleware/authenti")
 const User=require('../models/user');
 const UserReview=require("../models/UserReview");
+const Otp=require("../models/otp")
 const cookieParser =require("cookie-parser");
+const Mailer= require("../mail/Mailer")
 router.use(cookieParser())
 router.get("/",(req,res) => {
     res.send("home")
@@ -126,10 +128,85 @@ catch(err){
     console.log(err)
 
 }});
-router.get("/logout",authenti,(req,res) => {
+router.get("/logout",authenti,async (req,res) => {
     console.log("hellow logout")
     res.clearCookie('jwttoken',{path : '/'})
     res.status(200).send("logout")
+   
+})
+router.post("/forgot",async (req,res) => {
+    try{
+    const {email} = req.body;
+    let data = await User.findOne({email})
+    
+    if(data){
+        let otpcode=Math.floor((Math.random()*1000)+ 1)
+        let otpdata=new Otp(
+            {
+                email:email,
+                code:otpcode,
+                expiredate: new Date().getTime() + 300 *1000
+            }
+        
+        )
+        let otpfinal= await otpdata.save();
+        res.status(201).json({message:"send otp"})
+        Mailer(email,otpcode);
+        
+    }
+    else{
+        res.status(400).json({err:"email not exits"})
+
+    }
+
+    
+}
+catch(err){
+    console.log(err);
+}
+    
+})
+router.post("/changePassword",async (req,res) => {
+    try{
+        const {password,cpassword,email,otpcode}=req.body
+    const data= await Otp.findOne({email,code:otpcode})
+    console.log(data)
+
+    if(data){
+
+        let current=new Date().getTime();
+        let diff=data.expiredate - current;
+        if(!email || !otpcode || !password || !cpassword){
+            res.status(400).json({err:"enter all fileds"})
+
+        }
+        else if(password != cpassword){
+            res.status(400).json({err:"password not match"})
+
+        }
+        else if(diff < 0){
+            res.status(400).json({err:"time expired try again!!"})
+
+        }
+        else {
+            let user= await User.findOne({email:req.body.email})
+            user.password=req.body.password;
+            user.save();
+            res.status(201).json({message:"password change successfully"})
+            console.log("chnage")
+
+        }
+    }
+    else{
+        res.status(400).json({err:"invalid data"})
+    }
+    
+    
+    }
+    catch(err){
+        console.log(err)
+    }
+    
 })
 
 /*
