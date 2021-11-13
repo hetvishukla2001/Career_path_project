@@ -19,7 +19,6 @@ const CollegePage = (props) => {
     const {id} = props.location.state
     let info=data.find(data=> data.id === id)
     const [openTab, setOpenTab] = useState(1);
-    
 
     return (
         <>

@@ -8,6 +8,9 @@
     padding: auto;
     cursor: pointer;
 }
+.bg-landing-background1{
+	background-image: linear-gradient(rgba(0,0,0, 0.75), rgba(0,0,0, 0.75)), url('https://images.shiksha.com/mediadata/images/1565592818phpifLrOD.jpeg');
+}
 .col1{
     background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url('https://static.toiimg.com/thumb/msid-59324060,imgsize-67247,width-400,resizemode-4/59324060.jpg');
 }
