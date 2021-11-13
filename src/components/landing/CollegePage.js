@@ -7,7 +7,9 @@ import TabItem from "@material-tailwind/react/TabItem";
 import TabContent from "@material-tailwind/react/TabContent";
 import TabPane from "@material-tailwind/react/TabPane";
 
+
 import data from '../../school.jsx';
+import { useState } from "react";
 
 const CollegePage = () => { 
     const [openTab, setOpenTab] = useState(1);
