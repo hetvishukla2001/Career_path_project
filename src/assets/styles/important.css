@@ -23,3 +23,19 @@
 .col4{
     background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url('https://images.shiksha.com/mediadata/images/1565592818phpifLrOD.jpeg');
 }
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  #grid > div {
+   
+   margin: 2rem;
+  }
+  #item{
+      padding: auto;
+      margin: 1rem;
+      
+  }

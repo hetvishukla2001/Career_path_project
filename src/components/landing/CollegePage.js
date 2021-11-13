@@ -33,7 +33,7 @@ const CollegePage = (props) => {
 
 
 
-            <TabList color="lightBlue">
+            <TabList color="red">
                 <TabItem
                     onClick={(e) => {
                         e.preventDefault();
@@ -43,7 +43,7 @@ const CollegePage = (props) => {
                     active={openTab === 1 ? true : false}
                     href="tabItem"
                 >
-                    Info {id} {info.fees}
+                    Info  
                 </TabItem>
                 <TabItem
                     onClick={(e) => {
@@ -54,7 +54,7 @@ const CollegePage = (props) => {
                     active={openTab === 2 ? true : false}
                     href="tabItem"
                 >
-                    Course & Fees {id} {info.fees}
+                    Course & Fees 
                 </TabItem>
                 <TabItem
                     onClick={(e) => {
@@ -116,13 +116,7 @@ const CollegePage = (props) => {
             <TabContent>
                 <TabPane active={openTab === 1 ? true : false}>
                     <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that things
-                        could be at. So when you get something that has the name Kanye
-                        West on it, it’s supposed to be pushing the furthest
-                        possibilities. I will be the leader of a company that ends up
-                        being worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus.
+                       {info.name}
                     </p>
                 </TabPane>
                 <TabPane active={openTab === 2 ? true : false}>
