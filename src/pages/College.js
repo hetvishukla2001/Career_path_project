@@ -5,7 +5,11 @@ import data from '../components/college/CollegeCardData'
 import Header from 'components/profile/Header';
 import Cards from 'components/college/card';
 import { Container,Row,Col } from 'react-bootstrap';
+<<<<<<< Updated upstream
 import "bootstrap/dist/css/bootstrap.css";
+=======
+import 'components/college/CollegeCardData.jsx';
+>>>>>>> Stashed changes
 
 
 
@@ -50,8 +54,12 @@ export default function College() {
                 
                 
               
+<<<<<<< Updated upstream
                 {/* <div className=" px-4 mx-auto flex justify-between p-12 ">
                
+=======
+                <div className=" px-4 mx-auto flex justify-between p-12 ">
+>>>>>>> Stashed changes
                     <Cards />
                     <Cards />
                     <Cards />
