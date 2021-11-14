@@ -133,6 +133,19 @@ const CollegePage = (props) => {
         }
 
     }
+    function CourseFeesData (val,index,arr){
+        return (
+            <div id="item">
+                 <td  
+            id={val.id}
+            name={val.name}
+            fees={val.fees}
+            eli={val.eli}
+            />
+             </div>
+        )
+
+    }
 
 
     return (
@@ -240,28 +253,41 @@ const CollegePage = (props) => {
                         <table style={{width:"700px"}}>
                             <thead className="table1">
                                 <tr className="table1">
+                                    <th>Index No.</th>
                                     <th>Courses</th>
                                     <th>Fees</th>
                                     <th>Eligibility</th>
                                 </tr>
                             </thead>
-                            <tbody className="table1">
-                                <tr className="table1">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="table1">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="table1">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                            <tbody>
+                                {/* {data2.map((dataDetail, dataindex) => {
+                                    return(
+                                        <tr key={dataindex}>
+                                            <td>{dataindex}</td>
+                                            <td>{dataDetail.name}</td>
+                                            <td>{dataDetail.fees}</td>
+                                            <td>{dataDetail.eli}</td>
+                                        </tr>
+                                    )
+                                })} */}
                             </tbody>
+                            {/* <tbody className="table1">
+                                <tr className="table1">
+                                    <td>{data.map(CourseFeesData.name)}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr className="table1">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr className="table1">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody> */}
                         </table>
                     </div>
                 </TabPane>
