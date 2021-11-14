@@ -10,15 +10,129 @@ import { Image } from "@material-tailwind/react";
 import data from '../college/CollegeCardData';
 import DefaultNavbar from 'components/DefaultNavbar';
 import DefaultFooter from 'components/DefaultFooter';
+import H3 from '@material-tailwind/react/Heading3';
+import Paragraph from '@material-tailwind/react/Paragraph';
+import Input from '@material-tailwind/react/Input';
+import Textarea from '@material-tailwind/react/Textarea';
+import Button from '@material-tailwind/react/Button';
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const CollegePage = (props) => { 
+    const history=useHistory();
     
     const {id} = props.location.state
     let info=data.find(data=> data.id === id)
     const [openTab, setOpenTab] = useState(1);
+
+    const [deatils,newdetails]=useState({
+        
+    });
+    const [user,setUser]=useState({
+        username: deatils.username ,
+        email: deatils.email,
+        message:""
+    });
+    const callProfile=async ()=>{
+        try{
+            const res= await fetch("/getdata",
+            {
+                method:"GET",
+                headers:{
+                    
+                    "Content-Type": "application/json"
+                }
+            })
+            const data = await res.json();
+           newdetails(data);
+           setUser({
+            username: data.username ,
+            email: data.email,
+            message:""
+           }
+           )
+            if(!res.status === 200){
+                const error = new Error(res.error);
+                throw error ;
+
+            }
+
+        }
+        catch(err){
+        console.log(err);
+            
+        }
+
+    }
+   
+    useEffect(()=>{
+        callProfile();
+    },[])
+   
+    let name,value;
+    const handleInput =(e) =>{
+        
+        name=e.target.name;
+        value=e.target.value;
+        newdetails({...user,[name]:value})
+        setUser({...user,[name]:value})
+        
+
+
+    }
+    const PostDataMessage = async (e) =>{
+       
+        try{
+            e.preventDefault(); 
+            const {username,email,message}= user
+            const college=info.name
+            const res=  await fetch("/review",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                    username,email,message,college
+                })
+            })
+            const data = await res.json();
+            
+            if(res.status === 422){
+                toast.error("please fill all the field");
+               
+
+            }
+            else if(res.status === 400){
+                toast.error("please login first");
+                history.push("/login")
+
+            }
+           
+            
+            else{
+                newdetails({message:""});
+                setUser({
+                    username: deatils.username ,
+                    email: deatils.email,
+                    
+                    message:""});
+                toast.success("recored review");
+                
+               
+                
+            }
+            
+
+        }
+        catch(err){
+            console.log(err);
+        }
+
+    }
+
 
     return (
         <>
@@ -367,15 +481,55 @@ const CollegePage = (props) => {
                     </div>
                 </TabPane>
                 <TabPane active={openTab === 7 ? true : false}>
-                    <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that things
-                        could be at. So when you get something that has the name Kanye
-                        West on it, it’s supposed to be pushing the furthest
-                        possibilities. I will be the leader of a company that ends up
-                        being worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus.
-                    </p>
+                <div className="flex flex-wrap justify-center mt-24">
+                        <div className="w-full lg:w-8/12 px-4">
+                            <div className="relative flex flex-col min-w-0 break-words w-full mb-6">
+                                <div className="flex-auto p-5 lg:p-10">
+                                    <div className="w-full text-center">
+                                    <H3 color="gray">Let us know your Review About {info.name}</H3>
+                                        <Paragraph color="blueGray">
+                                            Complete this form 
+                                        </Paragraph>
+                                    </div>
+                                    <form method="POST">
+                                        <div className="flex gap-8 mt-16 mb-12">
+                                            <Input
+                                                value={deatils.username}
+                                                type="text"
+                                                
+                                                name="username"
+                                                onChange={handleInput}
+                                                placeholder="Full Name"
+                                                color="lightBlue"
+                                                disabled="true"
+                                            />
+                                            <Input
+                                                value={deatils.email}
+                                            
+                                                type="email"
+                                                name="email"
+                                                onChange={handleInput}
+                                                placeholder="Email Address"
+                                                color="lightBlue"
+                                                disabled="true"
+                                            />
+                                        </div>
+
+                                        <Textarea color="lightBlue" placeholder="Message" value={deatils.message}
+                                        onChange={handleInput}
+                                        name="message" />
+
+                                        <div className="flex justify-center mt-10">
+                                            <Button color="lightBlue" ripple="light"
+                                            onClick={PostDataMessage}>
+                                                Submit
+                                            </Button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </TabPane>
             </TabContent>
         </Tab>

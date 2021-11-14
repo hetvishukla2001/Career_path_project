@@ -87,6 +87,18 @@ export default function Form() {
             
             else{
                 toast.success("recored review");
+                newdetails({
+                    username: "" ,
+                    email: "",
+                    message:""
+
+                });
+                setUser({
+                    username: "" ,
+                    email: "",
+                    message:""
+                }
+                )
                
                 
             }

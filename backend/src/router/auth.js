@@ -8,6 +8,7 @@ const User=require('../models/user');
 const UserReview=require("../models/UserReview");
 const Otp=require("../models/otp")
 const cookieParser =require("cookie-parser");
+const CollegeReview = require("../models/CollegeReview")
 const Mailer= require("../mail/Mailer")
 router.use(cookieParser())
 router.get("/",(req,res) => {
@@ -207,7 +208,45 @@ router.post("/changePassword",async (req,res) => {
         console.log(err)
     }
     
-})
+});
+//review of college
+router.post("/review", async (req,res) => {
+   
+    try {
+        const {username,email,message,college}= req.body
+        if( !username || !email  ){
+            return res.status(400).json({err:"please login"})
+        }
+        if( !message || !college ){
+            return res.status(422).json({err:"please fill all the fields"})
+        }
+    const useredit=await CollegeReview.findOne({
+        collegename:college
+    });
+    if(useredit){
+        const usermessage = await useredit.addMessage(message,username,email)
+        await useredit.save();
+        return res.status(201).json({message : "user register again"})
+        
+    }
+    
+    else {
+        const users=new CollegeReview({collegename:college,username,email,messages:[{message:message,username:username,email:email}]})
+       
+        const userregister=await users.save();
+     
+    
+        return res.status(201).json({message : "user register"})
+    }
+
+    
+    
+}
+catch(err){
+   
+    console.log(err)
+
+}});
 
 /*
 router.post("/register",  (req,res) => {
