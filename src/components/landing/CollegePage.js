@@ -15,6 +15,7 @@ import Paragraph from '@material-tailwind/react/Paragraph';
 import Input from '@material-tailwind/react/Input';
 import Textarea from '@material-tailwind/react/Textarea';
 import Button from '@material-tailwind/react/Button';
+import data2 from "components/college/CourseFees";
 
 
 import { useEffect, useState } from "react";
@@ -229,7 +230,7 @@ const CollegePage = (props) => {
 
             <TabContent>
                 <TabPane active={openTab === 1 ? true : false}>
-                    <p>
+                    <p style={{fontSize:"40px"}}>
                        {info.name}
                     </p>
                 </TabPane>
