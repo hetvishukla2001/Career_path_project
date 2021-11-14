@@ -1,4 +1,4 @@
-import { useState,useContext } from 'react';
+import { useState,useContext, useEffect ,useHistory} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@material-tailwind/react/Navbar';
 import NavbarContainer from '@material-tailwind/react/NavbarContainer';
@@ -15,9 +15,49 @@ import Button from '@material-tailwind/react/Button';
 import { UserContext } from 'App';
 
 
+
+
+
+
 export default function DefaultNavbar() {
     const [openNavbar, setOpenNavbar] = useState(false);
     const {state,dispatch}=useContext(UserContext)
+    
+    const callProfile=async ()=>{
+        try{
+            const res= await fetch("/profiles",
+            {
+                method:"GET",
+                headers:{
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
+            })
+            const data = await res.json();
+           
+            if(!res.status === 200){
+                const error = new Error(res.error);
+                throw error ;
+
+            }
+            dispatch({type:"USER",payload:true})
+
+        }
+        catch(err){
+            console.log(err);
+            //history.push("/login")
+        }
+
+    }
+    
+    
+    useEffect(()=>{
+        callProfile();
+    },[])
+   
+    
+    
     const RenderMenu = ()=>{
         if(state){
             return (
@@ -56,7 +96,7 @@ export default function DefaultNavbar() {
              >
                  <Link to="/">
                      <DropdownItem color="lightBlue">
-                         Dashboard
+                         Dashboard 
                      </DropdownItem>
                  </Link>
                  <Link to="/profile">
