@@ -1,6 +1,6 @@
 const image =[
     {
-        id:"1",
+        id:"1",//Msu
         images:[
             {
                 src:"https://historyofvadodara.in/wp-content/uploads/MSU.jpg"
@@ -10,6 +10,77 @@ const image =[
             },
             {
                 src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1pbcOQuhKgGkbQSULgcwp7h4v_NQFu1qhiQ&usqp=CAU"
+            },
+            {
+                src:"https://images.shiksha.com/mediadata/images/1551073629phpQGm827.png"
+            }
+        ]
+    },
+    {
+        id:"2",//Navrachna
+        images:[
+            {
+                src:"https://images.shiksha.com/mediadata/images/1552888597phpTHSXWS.png"
+            },
+            {
+                src:"https://getmyuni.azureedge.net/college-image/big/navrachana-university-nu-vadodara.jpg"
+            },
+            {
+                src:"https://connectgujarat.com/wp-content/uploads/2019/12/IMG-20191221-WA0075.jpg"
+            },
+            {
+                src:"https://nuv.ac.in/images/AboutUs/Infras2.jpg"
+            }
+        ]
+    },
+    {
+        id:"3",//Parul
+        images:[
+            {
+                src:"https://images.shiksha.com/mediadata/images/1553414724phpmOlxMp.jpeg"
+            },
+            {
+                src:"https://static.toiimg.com/img/85271229/Master.jpg"
+            },
+            {
+                src:"https://images.static-collegedunia.com/public/image/2a72f9e2b989d4d41a45a5a17dbba1a1.png?tr=w-681,h-450,c-force"
+            },
+            {
+                src:"https://institutes.paruluniversity.ac.in/wp-content/uploads/2015/04/494554Our-Inspiration-Filled-Learning-Spaces.jpg"
+            }
+        ]
+    },
+    {
+        id:"4",//Nirma
+        images:[
+            {
+                src:"https://management.nirmauni.ac.in/wp-content/uploads/sites/24/2021/08/NUIM_003-final-for-homepage-1920x882-Copy-2.jpg"
+            },
+            {
+                src:"https://nirmauni.ac.in/wp-content/uploads/2020/06/uni_glance.jpg"
+            },
+            {
+                src:"https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/735/2018/4/6/Nirma-University--01-(1).jpg"
+            },
+            {
+                src:"https://images.shiksha.com/mediadata/images/1548842356php9U2Wyh.jpeg"
+            }
+        ]
+    },
+    {
+        id:"5",//Ddu nadiad
+        images:[
+            {
+                src:"https://www.ddu.ac.in/portfolio2/large/1.jpg"
+            },
+            {
+                src:"https://www.ddu.ac.in/images/DDU/nav-img.jpg"
+            },
+            {
+                src:"https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1556940303-banner.jpeg"
+            },
+            {
+                src:"https://www.ddu.ac.in/images/DentalScience/overview-1n.jpg"
             }
         ]
     }

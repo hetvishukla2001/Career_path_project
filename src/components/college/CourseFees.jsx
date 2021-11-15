@@ -78,117 +78,117 @@ const data2=[
     },
     {
         id:"3",//Parul,
-        course1:{
+        course:[{
             name:"B.Tech",
             fees:"1 Lakh ",
             eli:"10+2 with 45%"
         },
-        course2:{
+        {
             name:"MBBS",
             fees:"16.5 Lakhs ",
             eli:"10+2 with 50% + NEET"
         },
-        course3:{
+        {
             name:"MBA",
             fees:"95,000 ",
             eli:"Graduation with 50%"
         },
-        course4:{
+        {
             name:"BBA",
             fees:"60,000",
             eli:"10+2"
         },
-        course5:{
+        {
             name:"B.Sc",
             fees:"60,000",
             eli:"10+2"
         },
-        course6:{
+        {
             name:"M.Sc",
             fees:"60,000",
             eli:"Graduation"
         },
-        course7:{
+        {
             name:"BCA",
             fees:"60,000",
             eli:"10+2"
-        }
+        }]
     },
     {
         id:"4",//Nirma
-        course1:{
+        course:[{
             name:"BBA + MBA",
             fees:"2.71 Lakhs",
             eli:"10+2"
         },
-        course2:{
+        {
             name:"B.Tech",
             fees:"1.97 Lakhs",
             eli:"10+2 + JEE Main"
         },
-        course3:{
+        {
             name:"MBA",
             fees:"5.02 Lakhs ",
             eli:"Graduation with 50% + CAT"
         },
-        course4:{
+        {
             name:"B.Com {Hons.}",
             fees:"1.24 Lakhs ",
             eli:"10+2"
         },
-        course5:{
+        {
             name:"M.C.A",
             fees:"1.5 Lakhs",
             eli:"Graduation"
         },
-        course6:{
+        {
             name:"M.Tech	",
             fees:"2.65 Lakhs",
             eli:"Graduation + GATE"
         },
-        course7:{
+        {
             name:"BALLB {Hons.}",
             fees:"2.98 Lakhs",
             eli:"10+2 with 45% + CLAT"
-        }
+        }]
     },
     {
         id:"5",//DDU nadiad
-        course1:{
+        course:[{
             name:"B.Tech",
             fees:"1.52 Lakhs",
             eli:"10+2"
         },
-        course2:{
+        {
             name:"MBA",
             fees:"1.52 Lakhs",
             eli:"Graduation"
         },
-        course3:{
+        {
             name:"MBBS",
             fees:"7.85 Lakhs",
             eli:"10+2"
         },
-        course4:{
+        {
             name:"M.Tech",
             fees:"1.4 Lakhs",
             eli:"Pass in Graduation + GATE"
         },
-        course5:{
+        {
             name:"M.C.A",
             fees:"1.58 Lakhs",
             eli:"Graduation"
         },
-        course6:{
+        {
             name:"B.Pharma",
             fees:"1.54 Lakhs",
             eli:"10+2"
         },
-        course7:{
+        {
             name:"BDS",
             fees:"3.69 Lakhs",
             eli:"10+2"
-        }
+        }]
     }
 ]
 

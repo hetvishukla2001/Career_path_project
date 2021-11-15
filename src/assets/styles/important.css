@@ -39,3 +39,6 @@
       margin: 1rem;
       
   }
+
+  tr:hover {background-color: lightgray;}
+  

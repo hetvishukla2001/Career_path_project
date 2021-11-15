@@ -20,7 +20,8 @@ import ReviewCard from "components/college/ReviewCard";
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
-import image from 'components/college/image'
+import image from 'components/college/image';
+import faculty from "components/college/faculty";
 
 
 import { useEffect, useState } from "react";
@@ -34,6 +35,7 @@ const CollegePage = (props) => {
     let info=data.find(data=> data.id === id)
     let course2=data2.find(data2=>data2.id === id)
     let image2 = image.find(image=>image.id === id)
+    let faculty2 = faculty.find(faculty=>faculty.id === id)
     const [openTab, setOpenTab] = useState(1);
     const [getvalue,revalue] =useState([]);
 
@@ -277,9 +279,9 @@ const CollegePage = (props) => {
                 <TabPane active={openTab === 2 ? true : false}>
                     <h2 style={{textAlign:"left",fontSize:"24px",fontWeight:"bold",paddingBottom:"25px"}}>Courses & Fees</h2>
                     <div style={{paddingLeft:"120px"}}>
-                        <table style={{width:"700px"}}>
+                        <table style={{width:"1000px"}}>
                             <thead className="table1">
-                                <tr className="table1">
+                                <tr className="table1" style={{fontSize:"25px"}}>
                                     <th>Index No.</th>
                                     <th>Courses</th>
                                     <th>Fees</th>
@@ -287,7 +289,6 @@ const CollegePage = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                
                                 {/* <tr>
                                     <td>1</td>
                                    <td>{course.course1.name}</td> 
@@ -296,11 +297,11 @@ const CollegePage = (props) => {
                                 </tr> */}
                                 { course2.course.map((dataDetail, dataindex) => {
                                     return(
-                                        <tr key={dataindex}>
-                                            <td>{dataindex +1}</td>
-                                            <td>{dataDetail.name}</td>
-                                            <td>{dataDetail.fees}</td>
-                                            <td>{dataDetail.eli}</td>
+                                        <tr key={dataindex} style={{fontSize:"15px"}}>
+                                            <td style={{padding:"10px"}}>{dataindex +1}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.name}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.fees}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.eli}</td>
                                         </tr>
                                     )
                                 })}
@@ -340,53 +341,37 @@ const CollegePage = (props) => {
                 <TabPane active={openTab === 4 ? true : false}>
                     {/* Faculty */}
                     <h2 style={{textAlign:"left",fontSize:"24px",fontWeight:"bold",paddingBottom:"25px"}}>Faculty</h2>
-                            <div style={{textAlign:"left",display: "flex",flexWrap:"wrap",margin: "0px -8px",paddingLeft: "120px"}}>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                                <div style={{textAlign:"left",position: "relative",flex: "0 0 30%",marginBottom: "1rem",paddingRight: ".5rem",paddingLeft: ".5rem"}}>
-                                    <p>Faculty name</p>
-                                    <p>Faculty position</p>
-                                    <p>Faculty contact number</p>
-                                </div>
-                            </div>
+                    <div style={{paddingLeft:"120px"}}>
+                        <table style={{width:"1000px"}}>
+                            <thead className="table1">
+                                <tr className="table1" style={{fontSize:"25px"}}>
+                                    <th>Index No.</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Contact Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {/* <tr>
+                                    <td>1</td>
+                                   <td>{course.course1.name}</td> 
+                                   <td>{course.course1.fees}</td> 
+                                   <td>{course.course1.eli}</td> 
+                                </tr> */}
+                                { faculty2.details.map((dataDetail, dataindex) => {
+                                    return(
+                                        <tr key={dataindex} style={{fontSize:"15px"}}>
+                                            <td style={{padding:"10px"}}>{dataindex +1}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.name}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.position}</td>
+                                            <td style={{padding:"10px"}}>{dataDetail.contact}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                           
+                        </table>
+                    </div>
                 </TabPane>
                 <TabPane active={openTab === 5 ? true : false}>
                     <p>
