@@ -16,6 +16,7 @@ import Input from '@material-tailwind/react/Input';
 import Textarea from '@material-tailwind/react/Textarea';
 import Button from '@material-tailwind/react/Button';
 import data2 from "components/college/CourseFees";
+import ReviewCard from "components/college/ReviewCard";
 
 
 import { useEffect, useState } from "react";
@@ -27,7 +28,9 @@ const CollegePage = (props) => {
     
     const {id} = props.location.state
     let info=data.find(data=> data.id === id)
+    let course=data2.find(data2=>data2.id === id)
     const [openTab, setOpenTab] = useState(1);
+    const [getvalue,revalue] =useState([]);
 
     const [deatils,newdetails]=useState({
         
@@ -37,6 +40,7 @@ const CollegePage = (props) => {
         email: deatils.email,
         message:""
     });
+  
     const callProfile=async ()=>{
         try{
             const res= await fetch("/getdata",
@@ -68,9 +72,39 @@ const CollegePage = (props) => {
         }
 
     }
+    const callReview= async ()=>{
+        try{
+            const res=  await fetch("/getreview",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                    college:info.name
+                })
+            })
+            const data = await res.json();
+            revalue(data);
+            console.log(data)
+            console.log()
+           
+            if(!res.status === 200){
+                const error = new Error(res.error);
+                throw error ;
+
+            }
+
+        }
+        catch(err){
+            console.log(err);
+            
+        }
+
+    }
    
     useEffect(()=>{
         callProfile();
+        callReview();
     },[])
    
     let name,value;
@@ -133,19 +167,7 @@ const CollegePage = (props) => {
         }
 
     }
-    function CourseFeesData (val,index,arr){
-        return (
-            <div id="item">
-                 <td  
-            id={val.id}
-            name={val.name}
-            fees={val.fees}
-            eli={val.eli}
-            />
-             </div>
-        )
 
-    }
 
 
     return (
@@ -483,7 +505,7 @@ const CollegePage = (props) => {
                             <thead className="table1">
                                 <tr className="table1">
                                     <th>Sr. No.</th>
-                                    <th>Name of Hostel</th>
+                                    <th>Name of Hostel </th>
                                     <th>Capacity of Hostel</th>
                                 </tr>
                             </thead>
@@ -508,11 +530,17 @@ const CollegePage = (props) => {
                     </div>
                 </TabPane>
                 <TabPane active={openTab === 7 ? true : false}>
+                    
+                
+
+              
                 <div className="flex flex-wrap justify-center mt-24">
                         <div className="w-full lg:w-8/12 px-4">
                             <div className="relative flex flex-col min-w-0 break-words w-full mb-6">
                                 <div className="flex-auto p-5 lg:p-10">
                                     <div className="w-full text-center">
+                                   
+                                    
                                     <H3 color="gray">Let us know your Review About {info.name}</H3>
                                         <Paragraph color="blueGray">
                                             Complete this form 
@@ -541,7 +569,7 @@ const CollegePage = (props) => {
                                                 disabled="true"
                                             />
                                         </div>
-
+                                        
                                         <Textarea color="lightBlue" placeholder="Message" value={deatils.message}
                                         onChange={handleInput}
                                         name="message" />
@@ -557,6 +585,19 @@ const CollegePage = (props) => {
                             </div>
                         </div>
                     </div>
+                    <form method="POST">
+                                    <H3 color="gray">All Review About {info.name}</H3>
+                                    <div style={{padding:"1rem",margin:"2rem"}}>
+                                    {  getvalue.map(getvalue => <div style={{padding:"1rem",margin:"2rem"}}> <ReviewCard
+                                                                    username={getvalue.username}
+                                                                    email={getvalue.email}
+                                                                    message={getvalue.message}
+                                                                    />
+                                                                    </div>) }
+                                    </div>
+                                    
+
+                     </form>
                 </TabPane>
             </TabContent>
         </Tab>

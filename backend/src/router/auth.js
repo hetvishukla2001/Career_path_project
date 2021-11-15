@@ -248,6 +248,25 @@ catch(err){
 
 }});
 
+router.post("/getreview",async(req,res) => {
+    try {
+        const {college}= req.body
+        
+        const collegere = await CollegeReview.find({
+            collegename:college
+        });
+        
+        
+        res.send(collegere[0].messages);
+
+    }
+    catch(err){
+        console.log(err)
+
+    }
+    
+})
+
 /*
 router.post("/register",  (req,res) => {
     const {username,name,phone,password,cpassword,email,university,student}= req.body
