@@ -1,79 +1,80 @@
 const data2=[
     {
         id:"1",//For MSU
-        course1:{
+        course : [ 
+        {
             name:"MBA",
             fees:"14,500",
             eli:"Graduation with 50% + CMAT"
         },
-        course2:{
+        {
             name:"BBA",
             fees:"27,420",
             eli:"10+2"
         },
-        course3:{
+        {
             name:"M.Sc",
             fees:"9,090",
             eli:"Graduation"
         },
-        course4:{
+        {
             name:"B.Pharma",
             fees:"2,100",
             eli:"10+2"
         },
-        course5:{
+        {
             name:"BA",
             fees:"7,740",
             eli:"10+2"
         },
-        course6:{
+        {
             name:"BCA{Hons.}",
             fees:"54,920",
             eli:"10+2"
         },
-        course7:{
+        {
             name:"B.Ed",
             fees:"7,600",
             eli:"Graduation"
-        }
+        }]
     },
     {
         id:"2",//Navrachna,
-        course1:{
+        course:[{
             name:"MBA",
             fees:"1.14 Lakhs",
             eli:"Graduation with 50%"
         },
-        course2:{
+        {
             name:"B.Tech",
             fees:"1.14 Lakhs",
             eli:"10 +2 with 45%"
         },
-        course3:{
+        {
             name:"B.Ed",
             fees:"80,000",
             eli:"Graduation with 50%"
         },
-        course4:{
+        {
             name:"B.Des",
             fees:"1.2 Lakhs",
             eli:"10+2 with 50%"
         },
-        course5:{
+        {
             name:"B.Sc",
             fees:"1.1 Lakhs",
             eli:"10+2 with 45%"
         },
-        course6:{
+        {
             name:"BAJMC",
             fees:"94,000",
             eli:"10+2 with 45%"
         },
-        course7:{
+        {
             name:"B.Sc + M.Sc",
             fees:"1.1 Lakhs",
             eli:"10+2"
-        }
+        }]
     },
     {
         id:"3",//Parul,

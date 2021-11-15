@@ -17,6 +17,10 @@ import Textarea from '@material-tailwind/react/Textarea';
 import Button from '@material-tailwind/react/Button';
 import data2 from "components/college/CourseFees";
 import ReviewCard from "components/college/ReviewCard";
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import image from 'components/college/image'
 
 
 import { useEffect, useState } from "react";
@@ -28,7 +32,8 @@ const CollegePage = (props) => {
     
     const {id} = props.location.state
     let info=data.find(data=> data.id === id)
-    let course=data2.find(data2=>data2.id === id)
+    let course2=data2.find(data2=>data2.id === id)
+    let image2 = image.find(image=>image.id === id)
     const [openTab, setOpenTab] = useState(1);
     const [getvalue,revalue] =useState([]);
 
@@ -215,7 +220,7 @@ const CollegePage = (props) => {
                     active={openTab === 3 ? true : false}
                     href="tabItem"
                 >
-                    Faculty
+                    Gallery
                 </TabItem>
                 <TabItem
                     onClick={(e) => {
@@ -282,128 +287,55 @@ const CollegePage = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* {data2.map((dataDetail, dataindex) => {
+                                
+                                {/* <tr>
+                                    <td>1</td>
+                                   <td>{course.course1.name}</td> 
+                                   <td>{course.course1.fees}</td> 
+                                   <td>{course.course1.eli}</td> 
+                                </tr> */}
+                                { course2.course.map((dataDetail, dataindex) => {
                                     return(
                                         <tr key={dataindex}>
-                                            <td>{dataindex}</td>
+                                            <td>{dataindex +1}</td>
                                             <td>{dataDetail.name}</td>
                                             <td>{dataDetail.fees}</td>
                                             <td>{dataDetail.eli}</td>
                                         </tr>
                                     )
-                                })} */}
+                                })}
                             </tbody>
-                            {/* <tbody className="table1">
-                                <tr className="table1">
-                                    <td>{data.map(CourseFeesData.name)}</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="table1">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="table1">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody> */}
+                           
                         </table>
                     </div>
                 </TabPane>
                 <TabPane active={openTab === 3 ? true : false}>
                     {/* Gallery */}
                     <h2 style={{textAlign:"left",fontSize:"24px",fontWeight:"bold",paddingBottom:"50px"}}>Gallery</h2>
-                    <div className="flex flex-wrap -mt-12 justify-center">
-                        <Image
-                            src="data1[0].src1"//how to do this
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                    </div>
-                    <div className="flex flex-wrap -mt-12 justify-center">
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                        <Image
-                            src="https://images.static-collegedunia.com/public/college_data/images/campusimage/142181816320130902_153619.jpg?tr=h-135,w-205,c-force"
-                            rounded={false}
-                            raised={true}
-                            alt="Raised Image"
-                            className="text-blue-gray-800 p-3 w-2 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center mb-6"
-                        />
-                    </div>
+                    <AwesomeSlider style={{paddingBottom:"1rem",marginBottom:"1rem"}} animation="cubeAnimation">
+                    { image2.images.map((dataDetail, dataindex) => {
+                                    return(
+                                        <div style={{backgroundColor:"white"}}>
+                                            {/* <img src={dataDetail.src}></img> */}
+                                            <Image
+                                                src={dataDetail.src}//how to do this
+                                                rounded={false}
+                                                raised={true}
+                                                alt="Raised Image"
+                                                style={{height:"50rem",width:"70rem"}}
+                                                
+                                            />
+                                          
+                                          </div>
+                                        
+                                    )
+                    })}
+
+                       
+                        {/* <div>2</div>
+                        <div>3</div>
+                        <div>4</div> */}
+                    </AwesomeSlider>
                 </TabPane>
                 <TabPane active={openTab === 4 ? true : false}>
                     {/* Faculty */}
