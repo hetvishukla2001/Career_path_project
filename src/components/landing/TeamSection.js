@@ -7,42 +7,37 @@ import Image4 from 'assets/img/team-4-470x470.png';
 import { Link } from 'react-router-dom';
 import usa from './usa.png';
 import './TopCourses.css';
+import data from 'components/college/CollegeCardData';
+import Cards from 'components/college/card';
+
 export default function TeamSection() {
+    function collegecard (val,index,arr){
+        return (
+            <div id="item">
+                 <Cards 
+            id={val.id}
+            name={val.name}
+            fees={val.fees}
+            city={val.city}
+            src={val.src}
+            />
+             </div>            
+        )
+
+    }
     return (
-        <section className="pt-20 pb-48">
-            <div className="container max-w-7xl mx-auto px-4" style={{paddingBottom:"90px"}}>
+        <section className="">
+            <div className="container max-w-7xl mx-auto px-4">
                 <Title heading="Here are top 5 rated colleges in Gujarat">
                     According to google, we have selected the top 5 colleges
                     in colleges for last 5 years.
                 </Title>
-                <div className="flex flex-wrap">
-                    <TeamCard 
-                        img={usa}
-                        name="College 1"
-                        position=""
-                    />
-                    <TeamCard
-                        img={usa}
-                        name="College 2"
-                        position=""
-                    />
-                    <TeamCard
-                        img={usa}
-                        name="College 3"
-                        position=""
-                    />
-                    <TeamCard
-                        img={usa}
-                        name="College 4"
-                        position=""
-                    />
-                    <TeamCard
-                        img={usa}
-                        name="College 5"
-                        position=""
-                    />
-                </div>
-            </div>
+                <div id="grid">
+            
+          {data.filter((item, id) => id < 5).map(collegecard)}
+           
+          </div>    
+          </div>
 
             
 
