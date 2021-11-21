@@ -4,11 +4,12 @@ import data from 'components/college/CollegeCardData';
 
 import Header from 'components/profile/Header';
 import Cards from 'components/college/card';
+import { useState } from 'react';
 
 
-
-
+// https://www.youtube.com/watch?v=mZvKPtH9Fzo
 export default function College() {
+    // const [searchTerm, setSearchTerm] =useState('');
     function collegecard (val,index,arr){
         return (
             <div id="item">
@@ -21,11 +22,9 @@ export default function College() {
             />
              </div>
            
-            
-
         )
-
     }
+    
     return (
         <>
             <div className="absolute w-full z-20">
@@ -34,14 +33,32 @@ export default function College() {
          
 
                 <Header />
-                
+            {/* <div style={{backgroundColor:"lightgrey"}}>
+                <input type="text" placeholder="Search" 
+                onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                }}/>
+            </div>
+            {data.filter((value) => {
+                if(searchTerm == "") {
+                    return value
+                } else if (value.name.includes(searchTerm)) {
+                    return value
+                }
+            }).map((value,id) => {
+                return(
+                    <div id="grid" key={id}>           
+                        {data.map(collegecard)}         
+                    </div>
+                )
+            })} */}
           <div id="grid">
             
           {data.map(collegecard)}
            
           </div>    
                
-           
+          
             <DefaultFooter />
            
             
