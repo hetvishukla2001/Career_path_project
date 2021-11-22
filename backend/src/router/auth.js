@@ -1,10 +1,10 @@
 const express=require("express");
 
 const { model } = require("mongoose");
-const router = express.Router();
+const router = express.Router();//router for backend
 const bcrypt=require("bcryptjs");
 const authenti = require("../middleware/authenti")
-const User=require('../models/user');
+const User=require('../models/user');//get data from this file
 const UserReview=require("../models/UserReview");
 const Otp=require("../models/otp")
 const cookieParser =require("cookie-parser");
@@ -13,20 +13,22 @@ const Mailer= require("../mail/Mailer")
 router.use(cookieParser())
 router.get("/",(req,res) => {
     res.send("home")
-
 })
+//if you want to save the data user writes in your database
+//router.post is required
+
 router.post("/registers", async (req,res) => {
    
     try {
         const {username,phone,password,cpassword,email,university,student}= req.body
         if( !username ||   !phone || !password || !cpassword || !email || !university || !student ){
-            return res.status(422).json({err:"please fill all the fields"})
+            return res.status(422).json({err:"Please fill all the fields"})
         }
     const useredit=await User.findOne({
         email:email
     });
     if(useredit){
-        return res.status(422).json({error : " email already exits"})
+        return res.status(422).json({error : " Email already exits"})
     }
     else if(password != cpassword){
         return res.status(422).json({error : "password not match"})
@@ -37,7 +39,7 @@ router.post("/registers", async (req,res) => {
      const userregister=await users.save();
      
     
-        return res.status(201).json({message : "user register "})
+        return res.status(201).json({message : "User registered "})
     }
 
     
@@ -51,23 +53,24 @@ catch(err){
   
 
 })
+//login route   
 router.post("/signin",async (req,res)=>{
     
     try {
         let token;
         const {email,password}=req.body;
         if(!email || !password){
-            return res.status(400).json({error : "please fill the filed"})
+            return res.status(400).json({error : "Please fill the filed"})
         }
-        const useremail= await User.findOne({email:email})
+        const useremail= await User.findOne({email:email})//compare the email user entered with the emails in database
         
        
         if(!useremail){
-            return res.status(400).json({error : " email is not exits"})
+            return res.status(400).json({error : " Email does not exit"})
         }
         const ismatch= await bcrypt.compare(password,useremail.password)
         if(!ismatch){
-            return res.status(400).json({error : "password is incorrect"})
+            return res.status(400).json({error : "Password is incorrect"})
 
         }
         else {
@@ -76,7 +79,7 @@ router.post("/signin",async (req,res)=>{
                  expires:new Date(Date.now()+23654102000),
                  httpOnly:true
              })
-            res.json({message:"sign in successfully"})
+            res.json({message:"Sign in successfull"})
         }
 
     }
