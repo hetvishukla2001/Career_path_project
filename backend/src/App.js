@@ -18,6 +18,10 @@ const middleware =(req,res,next) => {
 
 }
 //middleware();
+if(process.env.NODE_ENV = "production"){
+    app.use(express.static("frontend/build"));
+
+}
 
 
 app.listen(port,()=>{

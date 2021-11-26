@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2d7af172.chunk.css",
+    "main.js": "/static/js/main.e8963bbe.chunk.js",
+    "main.js.map": "/static/js/main.e8963bbe.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5de1bc1b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5de1bc1b.js.map",
+    "static/css/2.9d7e7268.chunk.css": "/static/css/2.9d7e7268.chunk.css",
+    "static/js/2.750a3480.chunk.js": "/static/js/2.750a3480.chunk.js",
+    "static/js/2.750a3480.chunk.js.map": "/static/js/2.750a3480.chunk.js.map",
+    "static/js/3.f743b1ed.chunk.js": "/static/js/3.f743b1ed.chunk.js",
+    "static/js/3.f743b1ed.chunk.js.map": "/static/js/3.f743b1ed.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.9d7e7268.chunk.css.map": "/static/css/2.9d7e7268.chunk.css.map",
+    "static/css/main.2d7af172.chunk.css.map": "/static/css/main.2d7af172.chunk.css.map",
+    "static/js/2.750a3480.chunk.js.LICENSE.txt": "/static/js/2.750a3480.chunk.js.LICENSE.txt",
+    "static/media/career.css": "/static/media/background-1920x1280.20a2d875.jpg",
+    "static/media/all.min.css": "/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/five-ways-to-build-a-rewarding-career.74143360.jpg": "/static/media/five-ways-to-build-a-rewarding-career.74143360.jpg",
+    "static/media/team-1-800x800.fa5a7ac2.jpg": "/static/media/team-1-800x800.fa5a7ac2.jpg",
+    "static/media/team-2-800x800.3e08ef14.jpg": "/static/media/team-2-800x800.3e08ef14.jpg",
+    "static/media/team-3-800x800.19201574.jpg": "/static/media/team-3-800x800.19201574.jpg",
+    "static/media/team-4-470x470.4ef82ef4.png": "/static/media/team-4-470x470.4ef82ef4.png",
+    "static/media/teamwork.217c0d67.jpeg": "/static/media/teamwork.217c0d67.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5de1bc1b.js",
+    "static/css/2.9d7e7268.chunk.css",
+    "static/js/2.750a3480.chunk.js",
+    "static/css/main.2d7af172.chunk.css",
+    "static/js/main.e8963bbe.chunk.js"
+  ]
+}

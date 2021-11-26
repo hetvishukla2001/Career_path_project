@@ -40,7 +40,7 @@
     "npm:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "yarn:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn install && yarn start"
   },
-  "proxy": "http://localhost:5000/",
+  
   "eslintConfig": {
     "extends": [
       "react-app",
