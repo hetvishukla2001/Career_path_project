@@ -11,12 +11,12 @@ const QA = () => {
     const [data, setData] = useState(questions);
     return(
         <>
-            <div className="absolute w-full z-20" >
+            {/* <div className="absolute w-full z-20" >
                 <Navbar1 />
-            </div>
+            </div> */}
             <div className="body">
-                <section className="main_div">
-                <h1>College related Question and answers</h1>
+                <section className="main_div" style={{width:"90%"}}>
+                <h1>College Interview Question and answers</h1>
                 {
                     data.map((curElement) => {
                         const { id } = curElement;
