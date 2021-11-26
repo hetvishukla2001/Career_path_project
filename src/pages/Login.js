@@ -39,22 +39,12 @@ export default function Login() {
             })
         })
         const data=await res.json();
-        if(data.error == "please fill the filed" ){
-            toast.error("please fill all the filed");
+        if(res.status != 200 ){
+            toast.error("Invalid User");
            
 
         }
-        else if(data.error == " email is not exits" ){
-            toast.error("email is not exist");
-           
-            history.push("/register")
-
-        }
-        else if(data.error == "password is incorrect"){
-            toast.error("password is incorrect");
-           
-            
-        }
+       
         else{
             dispatch({type:"USER",payload:true})
             toast.success("login successfully");
