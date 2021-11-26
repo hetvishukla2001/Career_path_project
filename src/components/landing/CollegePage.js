@@ -1,6 +1,3 @@
-// import './CollegenameApi';
-// // import './CourseName';
-// import './CollegePage.css';
 import Tab from "@material-tailwind/react/Tab";
 import TabList from "@material-tailwind/react/TabList";
 import TabItem from "@material-tailwind/react/TabItem";

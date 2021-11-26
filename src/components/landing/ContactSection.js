@@ -2,7 +2,6 @@ import Title from 'components/landing/Title';
 import ContactCard from 'components/landing/ContactCard';
 import Form from 'components/landing/Form';
 
-//in this section we will have review,doubt session,one on one chat with professor
 
 export default function ContactSection() {
     return (
