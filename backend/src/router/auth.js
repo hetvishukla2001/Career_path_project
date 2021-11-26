@@ -184,7 +184,7 @@ router.post("/changePassword",async (req,res) => {
     try{
         const {password,cpassword,email,otpcode}=req.body
     const data= await Otp.findOne({email,code:otpcode})
-    console.log(data)
+    
 
     if(data){
 

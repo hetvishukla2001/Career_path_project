@@ -51,8 +51,7 @@ const userschema= new mongooses.Schema({
 
 
 
-//hashing the password
-//ask promises and await difference to hetvi and hashing password
+
 userschema.pre("save", async function (next){
  
    if( this.isModified("password")){
