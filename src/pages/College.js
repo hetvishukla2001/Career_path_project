@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 // https://www.youtube.com/watch?v=mZvKPtH9Fzo
 export default function College() {
-    // const [searchTerm, setSearchTerm] =useState('');
+     const [searchTerm, setSearchTerm] =useState('');
     function collegecard (val,index,arr){
         return (
             <div id="item">
@@ -33,28 +33,24 @@ export default function College() {
          
 
                 <Header />
-            {/* <div style={{backgroundColor:"lightgrey"}}>
+           
+            <div style={{backgroundColor:"lightblue",margin:"5rem",borderRadius:"1rem 1rem",display:"flex"}}>
                 <input type="text" placeholder="Search" 
                 onChange={(event) => {
                     setSearchTerm(event.target.value);
-                }}/>
+                }} style={{width:"99%",height:"3rem",border:"1px solid black",borderRadius:"1rem 1rem",margin:"5px"}}/>
+                <i class="fas fa-search fa-2x" style={{margin:"5px",marginTop:"1rem",}} ></i>
             </div>
-            {data.filter((value) => {
-                if(searchTerm == "") {
-                    return value
-                } else if (value.name.includes(searchTerm)) {
-                    return value
-                }
-            }).map((value,id) => {
-                return(
-                    <div id="grid" key={id}>           
-                        {data.map(collegecard)}         
-                    </div>
-                )
-            })} */}
           <div id="grid">
+          
             
-          {data.map(collegecard)}
+          {data.filter((val)=>{
+              if(searchTerm == ""){
+                  return val;
+              }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val;
+              }
+          }).map(collegecard)}
            
           </div>    
                

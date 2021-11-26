@@ -73,6 +73,10 @@ export default function Register() {
                 toast.error("fill the field");
 
             }
+            else if(res.status != 201){
+                toast.error("something is wrong");
+
+            }
             else{
                 toast.success("register successfully");
                 
