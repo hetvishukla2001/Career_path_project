@@ -5,7 +5,7 @@ import H6 from "@material-tailwind/react/Heading6";
 import Paragraph from "@material-tailwind/react/Paragraph";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
- export default function Cards({id,name,fees,city,src}){
+ export default function Cards({id,name,level,mode}){
     return (
         
          
@@ -13,11 +13,11 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
         {/* <CardImage src={src}
            alt="Card Image" /> */}
         <CardBody>
-            <Link to={{ pathname: '/info', state: { id: id} }}><H6 color="gray">{name}</H6></Link>
+            <H6 color="gray">{name}</H6>
             <Paragraph color="blueGray">
-               {city}
+               {mode}
             </Paragraph>
-            <h3>{fees}</h3>
+            <h3>{level}</h3>
         </CardBody>
     </Card>
      

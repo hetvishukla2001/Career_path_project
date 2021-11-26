@@ -1,23 +1,23 @@
 import DefaultNavbar from 'components/DefaultNavbar';
 import DefaultFooter from 'components/DefaultFooter';
-import data from 'components/college/CollegeCardData';
+import data from 'components/exam/ExamCardData';
 
 import Header from 'components/profile/Header';
-import Cards from 'components/college/card';
+import Cards from 'components/exam/card';
 import { useState } from 'react';
 
 
 // https://www.youtube.com/watch?v=mZvKPtH9Fzo
 export default function Exam() {
      const [searchTerm, setSearchTerm] =useState('');
-    function collegecard (val,index,arr){
+    function examcard (val,index,arr){
         return (
             <div id="item">
                  <Cards 
             id={val.id}
             name={val.name}
-            fees={val.fees}
-            city={val.city}
+            fees={val.level}
+            city={val.mode}
             src={val.src}
             />
              </div>
@@ -50,7 +50,7 @@ export default function Exam() {
               }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
                   return val;
               }
-          }).map(collegecard)}
+          }).map(examcard)}
            
           </div>    
                

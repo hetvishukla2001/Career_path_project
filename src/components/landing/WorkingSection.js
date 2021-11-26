@@ -23,7 +23,7 @@ export default function WorkingSection() {
                         color="lightBlue"
                         icon="library_books"
                         title="Explore Exams"
-                        link=""
+                        link="./Exam"
                     >
                         Find and learn all the exams to get admission in the department
                         of the college of your choice.

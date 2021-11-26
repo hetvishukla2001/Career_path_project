@@ -23,6 +23,7 @@ import { initialState,reducer } from 'components/reducer/UserReducer';
 import ResetPassword  from 'pages/ResetPassword'
 import CollegePage from 'components/landing/CollegePage';
 import Review from 'components/review/Review';
+import Exam from 'pages/Exam';
 
 export const UserContext = createContext();
 const Routing = () => {
@@ -42,6 +43,7 @@ const Routing = () => {
         <Route exact path="/reset" component={ResetPassword} />
         <Route exact path='/info'  component={CollegePage} />
         <Route exact path="/Review" component={Review} />
+        <Route exact path="/Exam" component={Exam}/>
         
         <Redirect from="*" to="/" />
       
