@@ -1,6 +1,6 @@
 import React from 'react';
 import './qa.css';
-import Navbar1 from '../../navbar/Navbar';
+import Navbar from '../../navbar/Navbar';
 import DefaultFooter from 'components/DefaultFooter';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -8,9 +8,8 @@ import { Carousel } from 'react-responsive-carousel';
 const Prof = () => {
     return(
         <>
-            <div className="absolute w-full z-20" >
-                <Navbar1 />
-            </div>
+            <Navbar />
+           
             <div className="body">
             <section className="main-div1" style={{marginTop:"100px"}}>
                 <Carousel>

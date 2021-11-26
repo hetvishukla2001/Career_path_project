@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import Navbar from "@material-tailwind/react/Navbar";
 import NavbarContainer from "@material-tailwind/react/NavbarContainer";
 import NavbarWrapper from "@material-tailwind/react/NavbarWrapper";
@@ -15,6 +15,38 @@ import { Link } from 'react-router-dom';
 export default function Navbar1() {
   const [openNavbar, setOpenNavbar] = useState(false);
   const {state,dispatch}=useContext(UserContext)
+  const callProfile=async ()=>{
+    try{
+        const res= await fetch("/profiles",
+        {
+            method:"GET",
+            headers:{
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            credentials: "include"
+        })
+        const data = await res.json();
+       
+        if(!res.status === 200){
+            const error = new Error(res.error);
+            throw error ;
+
+        }
+        dispatch({type:"USER",payload:true})
+
+    }
+    catch(err){
+        console.log(err);
+        //history.push("/login")
+    }
+
+}
+useEffect(()=>{
+    callProfile();
+},[])
+
+
     const RenderMenu = ()=>{
         if(state){
             return (

@@ -5,15 +5,13 @@ import { questions } from './api_QA';
 import './qa.css';
 import MyQA from './MyQA';
 import DefaultFooter from 'components/DefaultFooter';
-import Navbar1 from '../../navbar/Navbar';
+import Navbar from '../../navbar/Navbar';
 
 const QA = () => {
     const [data, setData] = useState(questions);
     return(
         <>
-            {/* <div className="absolute w-full z-20" >
-                <Navbar1 />
-            </div> */}
+           <Navbar />
             <div className="body">
                 <section className="main_div" style={{width:"90%"}}>
                 <h1>College Interview Question and answers</h1>
