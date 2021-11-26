@@ -289,12 +289,7 @@ const CollegePage = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* <tr>
-                                    <td>1</td>
-                                   <td>{course.course1.name}</td> 
-                                   <td>{course.course1.fees}</td> 
-                                   <td>{course.course1.eli}</td> 
-                                </tr> */}
+                              
                                 { course2.course.map((dataDetail, dataindex) => {
                                     return(
                                         <tr key={dataindex} style={{fontSize:"15px"}}>
@@ -374,77 +369,11 @@ const CollegePage = (props) => {
                     </div>
                 </TabPane>
                 <TabPane active={openTab === 5 ? true : false}>
-                    <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that things
-                        could be at. So when you get something that has the name Kanye
-                        West on it, it’s supposed to be pushing the furthest
-                        possibilities. I will be the leader of a company that ends up
-                        being worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus.
-                    </p>
+                 
                 </TabPane>
                 <TabPane active={openTab === 6 ? true : false}>
                     {/* Hostel */}
-                    <h2 style={{textAlign:"left",fontSize:"24px",fontWeight:"bold",paddingBottom:"25px"}}>Hostel for Female</h2>
-                    <div style={{paddingLeft:"120px"}}>
-                        <table className=" table table-striped border-1 table1"style={{width:"700px"}}>
-                            <thead className="table1">
-                                <tr className="table1">
-                                    <th>Sr. No.</th>
-                                    <th>Name of Hostel</th>
-                                    <th>Capacity of Hostel</th>
-                                </tr>
-                            </thead>
-                            <tbody className="table1">
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2 style={{textAlign:"left",fontSize:"24px",fontWeight:"bold",paddingBottom:"25px"}}>Hostel for Male</h2>
-                    <div style={{paddingLeft:"120px"}}>
-                        <table className=" table table-striped border-1 table1"style={{width:"700px"}}>
-                            <thead className="table1">
-                                <tr className="table1">
-                                    <th>Sr. No.</th>
-                                    <th>Name of Hostel </th>
-                                    <th>Capacity of Hostel</th>
-                                </tr>
-                            </thead>
-                            <tbody className="table1">
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                                <tr className="table1">
-                                    <td>c1</td>
-                                    <td>f1</td>
-                                    <td>e1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                   
                 </TabPane>
                 <TabPane active={openTab === 7 ? true : false}>
                     

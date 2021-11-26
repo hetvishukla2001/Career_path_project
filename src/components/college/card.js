@@ -1,4 +1,4 @@
-import React from "react";
+
 import Card from "@material-tailwind/react/Card";
 import CardImage from "@material-tailwind/react/CardImage";
 import CardBody from "@material-tailwind/react/CardBody";
@@ -13,8 +13,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
         
          
         <Card style={{height:"50% !important",overflow:"auto;"}}>
-        {/* <CardImage src={src}
-           alt="Card Image" /> */}
+     
         <CardBody>
             <Link to={{ pathname: '/info', state: { id: id} }}><H6 color="gray">{name}</H6></Link>
             <Paragraph color="blueGray">

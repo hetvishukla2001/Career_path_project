@@ -64,6 +64,18 @@ export default function Register() {
                 history.push("/login")
 
             }
+            else if(data.error == "email not exists" ){
+                toast.error("email not exists");
+               
+               
+
+            }
+            else if(data.error == "phone not exists" ){
+                toast.error("phone not exists");
+               
+                
+
+            }
             else if(data.error == "password not match"){
                 toast.error("password should be match");
                
@@ -187,27 +199,7 @@ export default function Register() {
                                 iconName="account_circle"
                             />
                         </div>
-                        <div className="mb-4 px-4">
-                        <Label color="">Are you A student?</Label>
-                        <div style={{display:"flex"}}>
-                        <Label color="">yes</Label>
-                        <Radio
-                            color="pink"
-                           value="true"
-                            id="option-1"
-                            name="student"
-                        />
-                        </div>
-                        <div style={{display:"flex"}}>
-                        <Label color="">No</Label>
-                        <Radio
-                            color="pink"
-                           value="false"
-                            id="option-2"
-                            name="student"
-                        />
-                        </div>
-                        </div>
+                       
                         
                     </CardBody>
                     <CardFooter>

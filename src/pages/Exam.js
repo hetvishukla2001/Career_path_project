@@ -16,9 +16,9 @@ export default function Exam() {
                  <Cards 
             id={val.id}
             name={val.name}
-            fees={val.level}
-            city={val.mode}
-            src={val.src}
+            level={val.level}
+            mode={val.mode}
+            
             />
              </div>
            

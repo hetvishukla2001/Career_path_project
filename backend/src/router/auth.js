@@ -1,5 +1,5 @@
 const express=require("express");
-
+const validator=require("validator")
 const { model } = require("mongoose");
 const router = express.Router();//router for backend
 const bcrypt=require("bcryptjs");
@@ -33,6 +33,14 @@ router.post("/registers", async (req,res) => {
     }
     else if(password != cpassword){
         return res.status(422).json({error : "password not match"})
+
+    }
+    else if(!validator.isEmail(email)){
+        return res.status(422).json({error : "email not exists"})
+
+    }
+    else if(!validator.isMobilePhone(phone)){
+        return res.status(422).json({error : "phone not exists"})
 
     }
     else {
@@ -99,6 +107,7 @@ router.get("/getdata",authenti,(req,res) => {
     
     res.send(req.rootToken);
 })
+// our website review
 router.post("/message", async (req,res) => {
    
     try {
@@ -262,6 +271,23 @@ router.post("/getreview",async(req,res) => {
         
         
         res.send(collegere[0].messages);
+
+    }
+    catch(err){
+        console.log(err)
+
+    }
+    
+})
+
+router.post("/getreviewall",async(req,res) => {
+    try {
+       
+        
+        const collegere = await CollegeReview.find();
+        
+        
+        res.send(collegere);
 
     }
     catch(err){

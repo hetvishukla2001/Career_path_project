@@ -21,6 +21,7 @@
     "mongoose": "^6.0.6",
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.15",
-    "react-toastify": "^8.0.3"
+    "react-toastify": "^8.0.3",
+    "validator": "^13.7.0"
   }
 }
