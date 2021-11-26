@@ -9,7 +9,8 @@ const UserReview=require("../models/UserReview");
 const Otp=require("../models/otp")
 const cookieParser =require("cookie-parser");
 const CollegeReview = require("../models/CollegeReview")
-const Mailer= require("../mail/Mailer")
+const Mailer= require("../mail/Mailer");
+const Doubt = require("../models/Doubt");
 router.use(cookieParser())
 router.get("/",(req,res) => {
     res.send("home")
@@ -293,6 +294,40 @@ router.post("/register",  (req,res) => {
 
 })
 */
+router.post("/doubt", async (req,res) => {
+   
+    try {
+        const {username,email,message}= req.body
+        if( !username || !email || !message ){
+            return res.status(422).json({err:"please fill all the fields"})
+        }
+    const useredit=await Doubt.findOne({
+        email:email
+    });
+    if(useredit){
+        const usermessage = await useredit.addMessage(message)
+        await useredit.save();
+        return res.status(201).json({message : "user register again"})
+        
+    }
+    
+    else {
+        const users=new Doubt({username,email,messages:[{message:message}]})
+       
+        const userregister=await users.save();
+     
+    
+        return res.status(201).json({message : "user register "})
+    }
+
+    
+    
+}
+catch(err){
+   
+    console.log(err)
+
+}});
 
 
 module.exports=router;

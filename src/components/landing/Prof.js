@@ -74,7 +74,7 @@ const Prof = () => {
         try{
             e.preventDefault(); 
             const {username,email,message}= user
-            const res=  await fetch("/message",{
+            const res=  await fetch("/doubt",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
