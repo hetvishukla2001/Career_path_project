@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.2d7af172.chunk.css",
-    "main.js": "/static/js/main.e8963bbe.chunk.js",
-    "main.js.map": "/static/js/main.e8963bbe.chunk.js.map",
+    "main.js": "/static/js/main.bd42e31f.chunk.js",
+    "main.js.map": "/static/js/main.bd42e31f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5de1bc1b.js",
     "runtime-main.js.map": "/static/js/runtime-main.5de1bc1b.js.map",
     "static/css/2.9d7e7268.chunk.css": "/static/css/2.9d7e7268.chunk.css",
-    "static/js/2.750a3480.chunk.js": "/static/js/2.750a3480.chunk.js",
-    "static/js/2.750a3480.chunk.js.map": "/static/js/2.750a3480.chunk.js.map",
+    "static/js/2.12aff1d6.chunk.js": "/static/js/2.12aff1d6.chunk.js",
+    "static/js/2.12aff1d6.chunk.js.map": "/static/js/2.12aff1d6.chunk.js.map",
     "static/js/3.f743b1ed.chunk.js": "/static/js/3.f743b1ed.chunk.js",
     "static/js/3.f743b1ed.chunk.js.map": "/static/js/3.f743b1ed.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.9d7e7268.chunk.css.map": "/static/css/2.9d7e7268.chunk.css.map",
     "static/css/main.2d7af172.chunk.css.map": "/static/css/main.2d7af172.chunk.css.map",
-    "static/js/2.750a3480.chunk.js.LICENSE.txt": "/static/js/2.750a3480.chunk.js.LICENSE.txt",
+    "static/js/2.12aff1d6.chunk.js.LICENSE.txt": "/static/js/2.12aff1d6.chunk.js.LICENSE.txt",
     "static/media/career.css": "/static/media/background-1920x1280.20a2d875.jpg",
     "static/media/all.min.css": "/static/media/fa-solid-900.efbd5d20.eot",
     "static/media/five-ways-to-build-a-rewarding-career.74143360.jpg": "/static/media/five-ways-to-build-a-rewarding-career.74143360.jpg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.5de1bc1b.js",
     "static/css/2.9d7e7268.chunk.css",
-    "static/js/2.750a3480.chunk.js",
+    "static/js/2.12aff1d6.chunk.js",
     "static/css/main.2d7af172.chunk.css",
-    "static/js/main.e8963bbe.chunk.js"
+    "static/js/main.bd42e31f.chunk.js"
   ]
 }
